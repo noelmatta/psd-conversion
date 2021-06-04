@@ -1,35 +1,72 @@
+// Variables
 $font-stack: 'Open Sans', sans-serif;
+$copy: #969595;
+$primary-color: #fff;
+$secondary-color: #f9f9f9;
 
-body {
-  font-family: $font-stack;
+// Mixins
+@mixin flex($orientation: row, $justify: space-between, $align: center) {
+  width: 100%;
+  display: flex;
+  flex-direction: $orientation;
+  justify-content: $justify;
+  align-items: $align;  
 }
 
+// CSS
+body {
+  font-family: $font-stack;
+  font-size: 12px;
+  color: $copy;
+  line-height: 1.8;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
 
 // Hero banners
-
 .home.hero {
   background-image: url('/images/thought-catalog-505eectW54k-unsplash.jpeg');
   background-size: cover;
   position: relative;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  top: -120px;  
+  top: -85px;  
+  @include flex($orientation: column, $justify: center);
   .hero-text {
     position: relative;
     z-index: 1;
-    color: #fff;
+    color: $primary-color;
+    @include flex($orientation: column);
+    transform: translateY(-10%);
+    h1 {
+      text-transform: uppercase;
+      font-size: 4rem;
+      border: 4px solid #ffffff;
+      padding: 10px 30px;   
+      margin: 0 0 10px 0;  
+      order: 2; 
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      order: 3;
+    }
+    h3 {
+      order: 1;
+      font-size: 1.6rem;
+    }
   }
-}
-
-.home.hero .hero-text {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .scroll-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10%;
+    font-size: 5rem;
+  }
 }
 
 .hero-overlay {
@@ -47,11 +84,19 @@ body {
 
 // Wrappers & Containers
 
+section {
+  padding: 30px 0;
+}
+
+.shaded {
+  background: $secondary-color;
+}
+
 .container {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 30px 15px;
 }
 
 .full-width {
@@ -61,4 +106,70 @@ body {
 
 .wrapper {
   width: 100%;
+}
+
+section.features {
+  .container .card {
+    border: 1px solid $secondary-color;
+    width: calc(25% - 20px);
+    min-height: 320px;
+    .icon {
+      background: $secondary-color;
+      @include flex($justify:center);
+      color: #dadada;
+      font-size: 1.5rem;
+      min-height: 110px;
+    }
+    &:hover .icon {
+      color: #31aae2;
+    }
+    .content {
+      text-align: center;
+      // min-height: 210px;
+      padding: 0 30px;
+      @include flex($orientation: column, $justify: space-around);
+      h4 {
+        font-weight: 400;
+        color: #313131;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+section.testimonials {
+  .testimonial-menu {
+    @include flex($justify: center, $align: initial);
+    .headshot {
+      max-width: 60px;
+      max-height: 60px;
+      margin: 0 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+section.features, section.cta, section.creative-team, section.tech-stack {
+  .container {
+    @include flex;
+  }
+}
+
+ footer .mid-footer {
+   .container {
+     @include flex($align: flex-start);
+   }
+ }
+
+// Form elements
+
+button {
+  padding: 15px 30px;
+  border: 0;
+  cursor: pointer;
+  text-transform: uppercase;
 }
