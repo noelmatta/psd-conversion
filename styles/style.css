@@ -244,6 +244,29 @@ template {
   overflow: hidden;
 }
 
+section.tech-stack .tech .empty, section.tech-stack .tech .filled {
+  width: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 175px;
+  margin: 0;
+  min-height: 175px;
+  border-radius: 50%;
+  border: 35px solid transparent;
+  background-repeat: no-repeat;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
@@ -467,12 +490,51 @@ section.cta p {
   margin: 0;
 }
 
+section.project-gallery {
+  background: url("/images/section_bg.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+section.project-gallery .project-gallery-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(225deg, #38c5f3 0%, #609622 100%);
+  z-index: 0;
+  opacity: 0.9;
+}
+section.project-gallery .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.project-gallery .container .gallery-slider, section.project-gallery .container .gallery-details {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 section.testimonials {
   background: url("/images/section_bg.png");
   background-size: cover;
   background-position: top;
   position: relative;
-  min-height: 466px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,9 +645,126 @@ section.latest-projects .projects {
 }
 section.latest-projects .projects .project {
   max-width: calc(100% / 3);
+  position: relative;
+  max-height: 250px;
+}
+section.latest-projects .projects .project:hover .project-preview {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.latest-projects .projects .project .project-preview {
+  display: none;
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+}
+section.latest-projects .projects .project .project-preview .project-category {
+  text-transform: uppercase;
+  color: #969595;
+  font-size: 0.8rem;
 }
 section.latest-projects .projects .project img {
   width: 100%;
+  height: 100%;
+}
+
+section.tech-stack .tech {
+  margin: 0 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.tech-stack .tech p {
+  text-align: center;
+  margin-top: 0;
+}
+section.tech-stack .tech .filled {
+  position: absolute;
+  top: 15px;
+  z-index: 2;
+}
+section.tech-stack .tech .filled.android {
+  background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(30deg, transparent 100%, transparent 100%), linear-gradient(0deg, #c183d6 100%, #c183d6 100%), linear-gradient(360deg, transparent 100%, transparent 100%);
+  background-position: center center, left top, right top, right bottom;
+  background-origin: content-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box;
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+section.tech-stack .tech .filled.woocommerce {
+  background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(30deg, transparent 100%, transparent 100%), linear-gradient(0deg, #73c8b7 100%, #73c8b7 100%), linear-gradient(360deg, transparent 100%, transparent 100%);
+  background-position: center center, left top, right top, right bottom;
+  background-origin: content-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+section.tech-stack .tech .empty {
+  position: relative;
+}
+section.tech-stack .tech .empty.photoshop {
+  background-size: 100% 100%, 50%, 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f9f9f9)), -webkit-gradient(linear, left top, right top, color-stop(100%, #fff), to(#fff)), -webkit-gradient(linear, right top, left top, color-stop(100%, #31aae2), to(#31aae2));
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(90deg, #fff 100%, #fff 100%), linear-gradient(270deg, #31aae2 100%, #31aae2 100%);
+  background-position: center center, left, right;
+  background-origin: content-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box;
+}
+section.tech-stack .tech .empty.javascript {
+  background-size: 100% 100%, 50% 50%, 50% 100%, 50% 50%;
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(30deg, #fff 100%, #fff 100%), linear-gradient(120deg, #eb768c 100%, #eb768c 100%), linear-gradient(360deg, #eb768c 100%, #eb768c 100%);
+  background-position: center center, left top, right top, left bottom;
+  background-origin: content-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box;
+}
+section.tech-stack .tech .empty.android {
+  background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(30deg, #fff 100%, #fff 100%), linear-gradient(0deg, #c183d6 100%, #c183d6 100%), linear-gradient(360deg, #fff 100%, #fff 100%);
+  background-position: center center, left top, right top, right bottom;
+  background-origin: content-box, border-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box, border-box;
+}
+section.tech-stack .tech .empty.woocommerce {
+  background-size: 100% 100%, 50%, 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f9f9f9)), -webkit-gradient(linear, left top, right top, color-stop(100%, #fff), to(#fff)), -webkit-gradient(linear, right top, left top, color-stop(100%, #73c8b7), to(#73c8b7));
+  background-image: linear-gradient(#f9f9f9, #f9f9f9), linear-gradient(90deg, #fff 100%, #fff 100%), linear-gradient(270deg, #73c8b7 100%, #73c8b7 100%);
+  background-position: center center, left, right;
+  background-origin: content-box, border-box, border-box;
+  background-clip: content-box, border-box, border-box;
+}
+section.tech-stack .tech .empty .percent {
+  position: absolute;
+  z-index: 3;
+  font-size: 1.5rem;
+  color: #000;
 }
 
 section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container {

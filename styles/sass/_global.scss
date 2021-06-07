@@ -5,8 +5,8 @@ $primary-color: #fff;
 $secondary-color: #f9f9f9;
 
 // Mixins
-@mixin flex($orientation: row, $justify: space-between, $align: center) {
-  width: 100%;
+@mixin flex($orientation: row, $justify: space-between, $align: center, $width: 100%) {
+  width: $width;
   display: flex;
   flex-direction: $orientation;
   justify-content: $justify;
@@ -24,6 +24,17 @@ $secondary-color: #f9f9f9;
   background: $bg-gradient;
   z-index: 0;
   opacity: 0.9;
+}
+
+// Extends
+%pie {
+  @include flex($orientation:column, $justify:center, $width: initial);  
+  min-width: 175px;
+  margin: 0;
+  min-height: 175px;
+  border-radius: 50%;
+  border: 35px solid transparent;
+  background-repeat: no-repeat; 
 }
 
 // CSS
@@ -182,12 +193,27 @@ section.cta {
   }
 }
 
+section.project-gallery {
+  background: url('/images/section_bg.png');
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  .project-gallery-overlay {
+    @include overlay;
+  }
+  .container {
+    @include flex;
+    .gallery-slider, .gallery-details {
+      flex: 1;
+    }
+  }
+}
+
 section.testimonials {
   background: url('/images/section_bg.png');
   background-size: cover;
   background-position: top;
   position: relative;
-  min-height: 466px;
   @include flex($orientation:column, $justify: space-evenly);
   color: $primary-color;
   .container {
@@ -244,9 +270,122 @@ section.latest-projects {
     flex-flow: wrap;
     .project {
       max-width: calc(100% / 3);
+      position: relative;
+      max-height: 250px;
+      &:hover .project-preview {
+        @include flex($justify: space-between);
+      }
+      .project-preview {
+        display: none;
+        padding: 0 40px;
+        background: rgba(255,255,255,0.85);
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        width: 100%; 
+        .project-category {
+          text-transform: uppercase;
+          color: $copy;
+          font-size:0.8rem;
+        } 
+      }  
       img {
         width: 100%;
+        height: 100%;
       }
+    }
+  }
+}
+
+section.tech-stack {
+  .tech {
+    p {
+      text-align: center;
+      margin-top:0;
+    }
+    margin: 0 30px;
+    @include flex($orientation:column);
+    .filled {
+      @extend %pie;
+      position:absolute;
+      top:15px;
+      z-index:2;
+      &.android {
+        background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(30deg, transparent 100%, transparent 100%),
+          linear-gradient(0deg, #c183d6 100%, #c183d6 100%),
+          linear-gradient(360deg, transparent 100%, transparent 100%);
+        background-position: center center, left top, right top, right bottom;  
+        background-origin: content-box, border-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box, border-box; 
+        transform: rotate(10deg);
+      }
+      &.woocommerce {
+        background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(30deg, transparent 100%, transparent 100%),
+          linear-gradient(0deg, #73c8b7 100%, #73c8b7 100%),
+          linear-gradient(360deg, transparent 100%, transparent 100%);
+        background-position: center center, left top, right top, right bottom;  
+        background-origin: content-box, border-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box, border-box; 
+        transform: rotate(135deg);
+      }      
+    }
+    .empty {
+      position: relative;
+      @extend %pie;
+      &.photoshop { 
+        background-size: 100% 100%, 50%, 50%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(90deg, #fff 100%, #fff 100%),
+          linear-gradient(270deg, #31aae2 100%, #31aae2 100%);
+        background-position: center center, left, right;
+        background-origin: content-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box;        
+      }
+      &.javascript { 
+        background-size: 100% 100%, 50% 50%, 50% 100%, 50% 50%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(30deg, #fff 100%, #fff 100%),
+          linear-gradient(120deg, #eb768c 100%, #eb768c 100%),
+          linear-gradient(360deg, #eb768c 100%, #eb768c 100%);
+        background-position: center center, left top, right top, left bottom;  
+        background-origin: content-box, border-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box, border-box;     
+      }
+      &.android { 
+        background-size: 100% 100%, 50% 50%, 50% 50%, 100% 100%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(30deg, #fff 100%, #fff 100%),
+          linear-gradient(0deg, #c183d6 100%, #c183d6 100%),
+          linear-gradient(360deg, #fff 100%, #fff 100%);
+        background-position: center center, left top, right top, right bottom;  
+        background-origin: content-box, border-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box, border-box;      
+      }   
+      &.woocommerce { 
+        background-size: 100% 100%, 50%, 50%;
+        background-image:
+          linear-gradient(#f9f9f9, #f9f9f9),
+          linear-gradient(90deg, #fff 100%, #fff 100%),
+          linear-gradient(270deg, #73c8b7 100%, #73c8b7 100%);
+        background-position: center center, left, right;
+        background-origin: content-box, border-box, border-box;
+        background-clip: content-box, border-box, border-box;          
+      }         
+      .percent {
+        position:absolute;
+        z-index:3;
+        font-size: 1.5rem;
+        color: #000;
+      } 
     }
   }
 }
