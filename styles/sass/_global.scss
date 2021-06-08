@@ -3,6 +3,7 @@ $font-stack: 'Open Sans', sans-serif;
 $copy: #969595;
 $primary-color: #fff;
 $secondary-color: #f9f9f9;
+$black: #313131;
 
 // Mixins
 @mixin flex($orientation: row, $justify: space-between, $align: center, $width: 100%) {
@@ -45,16 +46,20 @@ body {
   line-height: 1.8;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: $black;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
 ul li {
   list-style-type: none;
   display: inline-block;
 }
 
-h4 {
-  font-weight: 400;
-  color: #313131;
-  font-size: 1rem;
-}
 
 // Hero banners
 .home.hero {
@@ -73,19 +78,24 @@ h4 {
     h1 {
       text-transform: uppercase;
       font-size: 4rem;
-      border: 4px solid #ffffff;
-      padding: 10px 30px;   
+      border: 5px solid $primary-color;
+      padding: 0 45px;   
       margin: 0 0 10px 0;  
       order: 2; 
+      color: $primary-color;
+      font-weight: 700;
     }
     h2 {
       font-size: 1.2rem;
       font-weight: 400;
       order: 3;
+      color: $primary-color;
     }
     h3 {
       order: 1;
       font-size: 1.6rem;
+      color: $primary-color;
+      font-weight: 700;
     }
   }
   .scroll-down {
@@ -119,6 +129,13 @@ section {
   margin: 0 auto;
   padding: 15px;
   position: relative;
+}
+
+section > h3 {
+  text-align:center;
+  font-size:2rem;
+  color: #000;
+  font-weight:400;
 }
 
 .full-width {
@@ -202,9 +219,61 @@ section.project-gallery {
     @include overlay;
   }
   .container {
-    @include flex;
+    @include flex($align: flex-start);
+    h3, h4, i {
+      color: $primary-color;
+    }
+    p {
+      color: #a5ddf1;
+    }
     .gallery-slider, .gallery-details {
-      flex: 1;
+      width: calc(50% - 15px);
+    }
+    .gallery-slider {
+      .full-img {
+        .img-selector {
+          width: 100%;
+          height: 422px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .gallery-thumbs {
+          @include flex($justify: space-evenly);
+          background: rgba(255,255,255,0.1);
+          padding: 20px 0;
+          img {
+            width: 65px;
+            object-fit: cover;
+            height: 65px;
+            border: 3px solid #a7c9df;
+            border-radius: 50%;            
+          }     
+        }
+      }
+    }
+    .gallery-details {
+      h3 {
+        font-size: 1.6rem;
+        margin-top:0;
+      }
+      .gallery-features {
+        @include flex;
+        flex-wrap: wrap;
+        .gallery-feature {
+          width: 50%;
+          .icon {
+            float: left;
+            font-size: 1rem;
+            margin-right: 10px;
+          }
+          h4 {
+            display: inline;
+          }
+        }
+      }
     }
   }
 }
@@ -292,6 +361,43 @@ section.latest-projects {
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+}
+
+section.contact {
+  .contact-form {
+    width: calc(50% - 15px);
+    form {
+      label {
+        position: relative;
+        display: block;
+        margin: 15px 0;
+        input, textarea {
+          border: 1px solid #f1f1f1;
+          width: 100%;
+          padding: 20px;
+          &+i {
+            position: absolute;
+            margin-left: -30px;
+            padding: 20px 0;            
+          }
+        }
+      }
+      button {
+        width: 100%;
+      }
+    }
+  }
+  .contact-accordions {
+    width: calc(50% - 15px);
+    .accordion {
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        object-position: top;
       }
     }
   }
@@ -390,7 +496,59 @@ section.tech-stack {
   }
 }
 
-section.features, section.cta, section.creative-team, section.tech-stack {
+section.creative-team {
+  .creative-card {
+    &:nth-of-type(1n) h4.profile-name {
+      background-color: #31aae2;
+    }
+    &:nth-of-type(2n) h4.profile-name {
+      background-color: #eb768c;
+    }
+    &:nth-of-type(3n) h4.profile-name {
+      background-color: #c183d6;
+    }
+    &:nth-of-type(4n) h4.profile-name {
+      background-color: #73c8b7;
+    }
+    @include flex($orientation:column);
+    width: calc(25% - 20px);
+    background: $primary-color;
+    img {
+      width: 100%;
+      height: 265px;
+      object-fit: cover;
+      object-position: top;      
+    }
+    h4.profile-name {
+      text-align: center;
+      position: relative;
+      margin-top: -18px;
+      margin-bottom: 0;
+      color: white;
+      display: inline-block;
+      padding: 5px 25px; 
+      text-transform: uppercase; 
+      font-size:0.8rem;
+      .profile-title {
+        font-size:0.65rem;
+        font-weight:400;
+      }    
+    }
+    ul {
+      padding: 5px 20px;
+      @include flex($justify: space-evenly);
+      i {
+        color: $copy;
+        font-size:0.9rem;
+        &:hover {
+          color: #31aae2;
+        }
+      }
+    }
+  }
+}
+
+section.features, section.cta, section.creative-team, section.tech-stack, section.contact {
   .container {
     @include flex;
   }
@@ -409,6 +567,7 @@ button {
   border: 0;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.12rem;
-  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: 0.85rem;
 }

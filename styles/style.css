@@ -274,15 +274,18 @@ body {
   line-height: 1.8;
 }
 
-ul li {
-  list-style-type: none;
-  display: inline-block;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  color: #313131;
 }
 
 h4 {
-  font-weight: 400;
-  color: #313131;
   font-size: 1rem;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
 }
 
 .home.hero {
@@ -330,12 +333,14 @@ h4 {
 .home.hero .hero-text h1 {
   text-transform: uppercase;
   font-size: 4rem;
-  border: 4px solid #ffffff;
-  padding: 10px 30px;
+  border: 5px solid #fff;
+  padding: 0 45px;
   margin: 0 0 10px 0;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  color: #fff;
+  font-weight: 700;
 }
 .home.hero .hero-text h2 {
   font-size: 1.2rem;
@@ -343,12 +348,15 @@ h4 {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  color: #fff;
 }
 .home.hero .hero-text h3 {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   font-size: 1.6rem;
+  color: #fff;
+  font-weight: 700;
 }
 .home.hero .scroll-down {
   position: absolute;
@@ -387,6 +395,13 @@ section {
   margin: 0 auto;
   padding: 15px;
   position: relative;
+}
+
+section > h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #000;
+  font-weight: 400;
 }
 
 .full-width {
@@ -520,14 +535,87 @@ section.project-gallery .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+section.project-gallery .container h3, section.project-gallery .container h4, section.project-gallery .container i {
+  color: #fff;
+}
+section.project-gallery .container p {
+  color: #a5ddf1;
+}
+section.project-gallery .container .gallery-slider, section.project-gallery .container .gallery-details {
+  width: calc(50% - 15px);
+}
+section.project-gallery .container .gallery-slider .full-img .img-selector {
+  width: 100%;
+  height: 422px;
+}
+section.project-gallery .container .gallery-slider .full-img .img-selector img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.project-gallery .container .gallery-slider .full-img .gallery-thumbs {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
 }
-section.project-gallery .container .gallery-slider, section.project-gallery .container .gallery-details {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+section.project-gallery .container .gallery-slider .full-img .gallery-thumbs img {
+  width: 65px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 65px;
+  border: 3px solid #a7c9df;
+  border-radius: 50%;
+}
+section.project-gallery .container .gallery-details h3 {
+  font-size: 1.6rem;
+  margin-top: 0;
+}
+section.project-gallery .container .gallery-details .gallery-features {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+section.project-gallery .container .gallery-details .gallery-features .gallery-feature {
+  width: 50%;
+}
+section.project-gallery .container .gallery-details .gallery-features .gallery-feature .icon {
+  float: left;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+section.project-gallery .container .gallery-details .gallery-features .gallery-feature h4 {
+  display: inline;
 }
 
 section.testimonials {
@@ -683,6 +771,39 @@ section.latest-projects .projects .project img {
   height: 100%;
 }
 
+section.contact .contact-form {
+  width: calc(50% - 15px);
+}
+section.contact .contact-form form label {
+  position: relative;
+  display: block;
+  margin: 15px 0;
+}
+section.contact .contact-form form label input, section.contact .contact-form form label textarea {
+  border: 1px solid #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+section.contact .contact-form form label input + i, section.contact .contact-form form label textarea + i {
+  position: absolute;
+  margin-left: -30px;
+  padding: 20px 0;
+}
+section.contact .contact-form form button {
+  width: 100%;
+}
+section.contact .contact-accordions {
+  width: calc(50% - 15px);
+}
+section.contact .contact-accordions .accordion img {
+  width: 100%;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
 section.tech-stack .tech {
   margin: 0 30px;
   width: 100%;
@@ -767,7 +888,85 @@ section.tech-stack .tech .empty .percent {
   color: #000;
 }
 
-section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container {
+section.creative-team .creative-card {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: calc(25% - 20px);
+  background: #fff;
+}
+section.creative-team .creative-card:nth-of-type(1n) h4.profile-name {
+  background-color: #31aae2;
+}
+section.creative-team .creative-card:nth-of-type(2n) h4.profile-name {
+  background-color: #eb768c;
+}
+section.creative-team .creative-card:nth-of-type(3n) h4.profile-name {
+  background-color: #c183d6;
+}
+section.creative-team .creative-card:nth-of-type(4n) h4.profile-name {
+  background-color: #73c8b7;
+}
+section.creative-team .creative-card img {
+  width: 100%;
+  height: 265px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+section.creative-team .creative-card h4.profile-name {
+  text-align: center;
+  position: relative;
+  margin-top: -18px;
+  margin-bottom: 0;
+  color: white;
+  display: inline-block;
+  padding: 5px 25px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+section.creative-team .creative-card h4.profile-name .profile-title {
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+section.creative-team .creative-card ul {
+  padding: 5px 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.creative-team .creative-card ul i {
+  color: #969595;
+  font-size: 0.9rem;
+}
+section.creative-team .creative-card ul i:hover {
+  color: #31aae2;
+}
+
+section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container, section.contact .container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -806,8 +1005,9 @@ button {
   border: 0;
   cursor: pointer;
   text-transform: uppercase;
-  letter-spacing: 0.12rem;
-  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  font-size: 0.85rem;
 }
 
 header {

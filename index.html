@@ -201,8 +201,8 @@
         </div>
       </section>
       <section class="latest-projects bright">
+        <h3>Latest Projects</h3>
         <div class="container">
-          <h3>Latest Projects</h3>
           <nav class="project-filters">
             <ul>
               <li>All</li>
@@ -336,15 +336,15 @@
           <div class="gallery-slider">
             <div class="full-img">
               <div class="img-selector">
-                dot dot dot
+                <img src="./images/proj_2.png" alt="img 1" />
               </div>
               <div class="gallery-thumbs">
-                <img src="" alt="img 1" />
-                <img src="" alt="img 1" />
-                <img src="" alt="img 1" />
-                <img src="" alt="img 1" />
-                <img src="" alt="img 1" />
-                <img src="" alt="img 1" />
+                <img src="./images/proj_1.png" alt="img 1" />
+                <img src="./images/proj_2.png" alt="img 1" />
+                <img src="./images/proj_3.png" alt="img 1" />
+                <img src="./images/proj_4.png" alt="img 1" />
+                <img src="./images/proj_5.png" alt="img 1" />
+                <img src="./images/proj_6.png" alt="img 1" />
               </div>
             </div>
           </div>
@@ -360,17 +360,17 @@
               </div>
               <div class="gallery-feature">
                 <div class="icon"><i class="fas fa-pen-square"></i></div>
-                <h4>Awesome Portfolio</h4>
+                <h4>Google Fonts</h4>
                 <p>lass aptent taciti sociosqu litora equent conubia nos per inceptos himenaeos.</p>
               </div>
               <div class="gallery-feature">
                 <div class="icon"><i class="fas fa-external-link-square-alt"></i></div>
-                <h4>Awesome Portfolio</h4>
+                <h4>Creative Ideas</h4>
                 <p>lass aptent taciti sociosqu litora equent conubia nos per inceptos himenaeos.</p>
               </div>
               <div class="gallery-feature">
                 <div class="icon"><i class="fas fa-bell"></i></div>
-                <h4>Awesome Portfolio</h4>
+                <h4>AJAX Transitions</h4>
                 <p>lass aptent taciti sociosqu litora equent conubia nos per inceptos himenaeos.</p>
               </div>
             </div>
@@ -380,9 +380,9 @@
       </section>
       <section class="creative-team shaded">
         <h3>Meet the Creatives</h3>
-        <div class="container col-flex">
+        <div class="container">
           <div class="creative-card">
-            <img src="" alt="" />
+            <img src="./images/team_01.png" alt="" />
             <h4 class="profile-name">Reena Scott <span class="profile-title">- Founder</span></h4>
             <ul class=profile-links>
               <li><a href=""><i class="fab fa-twitter"></i></a></li>
@@ -394,8 +394,8 @@
             </ul>
           </div>
           <div class="creative-card">
-            <img src="" alt="" />
-            <h4 class="profile-name">Reena Scott <span class="profile-title">- Founder</span></h4>
+            <img src="./images/team_02.png" alt="" />
+            <h4 class="profile-name">Jennifer White <span class="profile-title">- Founder</span></h4>
             <ul class=profile-links>
               <li><a href=""><i class="fab fa-twitter"></i></a></li>
               <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
@@ -406,8 +406,8 @@
             </ul>
           </div>
           <div class="creative-card">
-            <img src="" alt="" />
-            <h4 class="profile-name">Reena Scott <span class="profile-title">- Founder</span></h4>
+            <img src="./images/team_03.png" alt="" />
+            <h4 class="profile-name">David Martin <span class="profile-title">- Founder</span></h4>
             <ul class=profile-links>
               <li><a href=""><i class="fab fa-twitter"></i></a></li>
               <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
@@ -418,8 +418,8 @@
             </ul>
           </div>
           <div class="creative-card">
-            <img src="" alt="" />
-            <h4 class="profile-name">Reena Scott <span class="profile-title">- Founder</span></h4>
+            <img src="./images/team_01.png" alt="" />
+            <h4 class="profile-name">Rebecca Ali <span class="profile-title">- Founder</span></h4>
             <ul class=profile-links>
               <li><a href=""><i class="fab fa-twitter"></i></a></li>
               <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
@@ -436,18 +436,69 @@
           <div class="contact-form">
             <h3>Contact Form</h3>
             <form action="">
-              <input type="text"><i class="fas fa-user"></i>
-              <input type="text"><i class="far fa-envelope"></i>
-              <input type="text"><i class="fas fa-phone-alt"></i>
-              <textarea name="" id="" cols="30" rows="10"></textarea><i class="fas fa-comments"></i>
-              <button>Submit</button>
+              <label for="">
+                <input
+                  type="text"
+                  placeholder="First name"
+                  name="name"
+                  required>
+                <i class="fas fa-user"></i>
+              </label>
+              <label for="">
+                <input
+                  type="text"
+                  placeholder="Email address"
+                  name="email"
+                  required>
+                <i class="far fa-envelope"></i>
+              </label>
+              <label for="">
+                <input 
+                  type="text"
+                  placeholder="Phone number"
+                  name="phone"
+                  required>
+                <i class="fas fa-phone-alt"></i>
+              </label>
+              <label for="">
+                <textarea
+                  name="comment"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Write message"
+                  required></textarea>
+                <i class="fas fa-comments"></i>
+              </label>
+              <button>Send Message</button>
             </form>
           </div>
           <div class="contact-accordions">
             <h3>Who We Are</h3>
-            <div class="accordion"></div>
-            <div class="accordion"></div>
-            <div class="accordion"></div>
+
+            <div class="accordion">
+              <img src="./images/about.png" alt="" class="panel-photo">
+              <button class="accordion-toggle">Services We Provide</button>
+              <div class="panel">
+                <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis miristum nulla.</p>
+              </div>              
+            </div>
+            <div class="accordion">
+              <img src="./images/about.png" alt="" class="panel-photo">
+              <button class="accordion-toggle">Huge Corporate Responsibility</button>
+              <div class="panel">
+                <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
+                  miristum nulla.</p>
+              </div>
+            </div>
+            <div class="accordion">
+              <img src="./images/about.png" alt="" class="panel-photo">
+              <button class="accordion-toggle">Free Demo Content Installations</button>
+              <div class="panel">
+                <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
+                  miristum nulla.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -483,7 +534,7 @@
         </div>
       </div>
       <div class="mid-footer">
-        <div class="container col-flex">
+        <div class="container">
           <div class="archives">
             <h4>Archives</h4>
             <ul>
