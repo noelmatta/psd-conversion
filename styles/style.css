@@ -259,11 +259,11 @@ section.tech-stack .tech .empty, section.tech-stack .tech .filled {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-width: 175px;
+  min-width: 145px;
   margin: 0;
-  min-height: 175px;
+  min-height: 145px;
   border-radius: 50%;
-  border: 35px solid transparent;
+  border: 30px solid transparent;
   background-repeat: no-repeat;
 }
 
@@ -279,8 +279,20 @@ h1, h2, h3, h4, h5, h6 {
   color: #313131;
 }
 
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
 h4 {
   font-size: 1rem;
+}
+
+p:first-of-type {
+  margin-top: 0;
 }
 
 ul li {
@@ -354,7 +366,6 @@ ul li {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  font-size: 1.6rem;
   color: #fff;
   font-weight: 700;
 }
@@ -368,7 +379,7 @@ ul li {
   font-size: 5rem;
 }
 
-.hero-overlay {
+.overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -380,9 +391,39 @@ ul li {
   z-index: 0;
   opacity: 0.9;
 }
+.overlay + .container button {
+  background: #f9f9f9;
+  color: #313131;
+}
 
-section {
-  padding: 30px 0;
+section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container, section.contact .container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+}
+
+section:not(.cta) {
+  padding: 80px 0;
+}
+
+section.cta {
+  padding: 25px 0;
+}
+section.cta .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .shaded {
@@ -397,11 +438,11 @@ section {
   position: relative;
 }
 
-section > h3 {
+section > h2 {
   text-align: center;
-  font-size: 2rem;
   color: #000;
   font-weight: 400;
+  margin: 0;
 }
 
 .full-width {
@@ -457,7 +498,6 @@ section.benefits .container .benefits-grid .benefits-img {
 section.features .container .card {
   border: 1px solid #f9f9f9;
   width: calc(25% - 20px);
-  min-height: 320px;
 }
 section.features .container .card .icon {
   background: #f9f9f9;
@@ -477,14 +517,14 @@ section.features .container .card .icon {
           align-items: center;
   color: #dadada;
   font-size: 1.5rem;
-  min-height: 110px;
+  padding: 55px 0;
 }
 section.features .container .card:hover .icon {
   color: #31aae2;
 }
 section.features .container .card .content {
   text-align: center;
-  padding: 0 30px;
+  padding: 15px 30px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -511,7 +551,7 @@ section.project-gallery {
   background-position: top;
   position: relative;
 }
-section.project-gallery .project-gallery-overlay {
+section.project-gallery .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -535,9 +575,9 @@ section.project-gallery .container {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 section.project-gallery .container h3, section.project-gallery .container h4, section.project-gallery .container i {
   color: #fff;
@@ -545,12 +585,12 @@ section.project-gallery .container h3, section.project-gallery .container h4, se
 section.project-gallery .container p {
   color: #a5ddf1;
 }
-section.project-gallery .container .gallery-slider, section.project-gallery .container .gallery-details {
+section.project-gallery .container .gallery-slider {
   width: calc(50% - 15px);
 }
 section.project-gallery .container .gallery-slider .full-img .img-selector {
   width: 100%;
-  height: 422px;
+  height: 400px;
 }
 section.project-gallery .container .gallery-slider .full-img .img-selector img {
   width: 100%;
@@ -574,7 +614,7 @@ section.project-gallery .container .gallery-slider .full-img .gallery-thumbs {
       -ms-flex-align: center;
           align-items: center;
   background: rgba(255, 255, 255, 0.1);
-  padding: 20px 0;
+  padding: 18px 0;
 }
 section.project-gallery .container .gallery-slider .full-img .gallery-thumbs img {
   width: 65px;
@@ -584,9 +624,24 @@ section.project-gallery .container .gallery-slider .full-img .gallery-thumbs img
   border: 3px solid #a7c9df;
   border-radius: 50%;
 }
+section.project-gallery .container .gallery-details {
+  width: calc(50% - 15px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
 section.project-gallery .container .gallery-details h3 {
-  font-size: 1.6rem;
-  margin-top: 0;
+  margin: 0;
 }
 section.project-gallery .container .gallery-details .gallery-features {
   width: 100%;
@@ -607,7 +662,8 @@ section.project-gallery .container .gallery-details .gallery-features {
       flex-wrap: wrap;
 }
 section.project-gallery .container .gallery-details .gallery-features .gallery-feature {
-  width: 50%;
+  width: calc(50% - 15px);
+  margin-bottom: 15px;
 }
 section.project-gallery .container .gallery-details .gallery-features .gallery-feature .icon {
   float: left;
@@ -615,7 +671,8 @@ section.project-gallery .container .gallery-details .gallery-features .gallery-f
   margin-right: 10px;
 }
 section.project-gallery .container .gallery-details .gallery-features .gallery-feature h4 {
-  display: inline;
+  display: inline-block;
+  margin: 0 0 20px 0;
 }
 
 section.testimonials {
@@ -642,7 +699,7 @@ section.testimonials {
 section.testimonials .container {
   padding: 0 90px;
 }
-section.testimonials .testimonials-overlay {
+section.testimonials .overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -671,7 +728,7 @@ section.testimonials .arrow {
   text-align: center;
 }
 section.testimonials .testimonial-content {
-  margin: 40px;
+  margin: 40px 0 0 0;
 }
 section.testimonials .testimonial-slider {
   width: 100%;
@@ -771,13 +828,29 @@ section.latest-projects .projects .project img {
   height: 100%;
 }
 
+section.contact h3 {
+  margin-top: 0;
+}
 section.contact .contact-form {
   width: calc(50% - 15px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
 }
 section.contact .contact-form form label {
   position: relative;
   display: block;
-  margin: 15px 0;
+  margin-bottom: 15px;
 }
 section.contact .contact-form form label input, section.contact .contact-form form label textarea {
   border: 1px solid #f1f1f1;
@@ -789,11 +862,29 @@ section.contact .contact-form form label input + i, section.contact .contact-for
   margin-left: -30px;
   padding: 20px 0;
 }
+section.contact .contact-form form label textarea {
+  min-height: 100px;
+}
 section.contact .contact-form form button {
   width: 100%;
 }
 section.contact .contact-accordions {
   width: calc(50% - 15px);
+}
+section.contact .contact-accordions .accordion {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 15px;
+}
+section.contact .contact-accordions .accordion.open button {
+  color: #31aae2;
+}
+section.contact .contact-accordions .accordion.open button:before {
+  color: #fff;
+  background: #31aae2;
+  content: "-";
+}
+section.contact .contact-accordions .accordion.closed .panel-photo, section.contact .contact-accordions .accordion.closed .panel {
+  display: none;
 }
 section.contact .contact-accordions .accordion img {
   width: 100%;
@@ -802,6 +893,32 @@ section.contact .contact-accordions .accordion img {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+section.contact .contact-accordions .accordion button {
+  background: white;
+  position: relative;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 15px 60px;
+  color: #969595;
+  font-size: 1rem;
+  cursor: pointer;
+}
+section.contact .contact-accordions .accordion button:before {
+  content: "+";
+  position: absolute;
+  margin-left: -40px;
+  background: #dadada;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: 14px;
+}
+section.contact .contact-accordions .accordion .panel {
+  padding: 10px 60px;
 }
 
 section.tech-stack .tech {
@@ -904,6 +1021,7 @@ section.creative-team .creative-card {
       -ms-flex-align: center;
           align-items: center;
   width: calc(25% - 20px);
+  margin-top: 20px;
   background: #fff;
 }
 section.creative-team .creative-card:nth-of-type(1n) h4.profile-name {
@@ -923,8 +1041,6 @@ section.creative-team .creative-card img {
   height: 265px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
 }
 section.creative-team .creative-card h4.profile-name {
   text-align: center;
@@ -966,7 +1082,17 @@ section.creative-team .creative-card ul i:hover {
   color: #31aae2;
 }
 
-section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container, section.contact .container {
+footer {
+  color: #969595;
+}
+footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
+  color: #fff;
+}
+footer .top-footer {
+  background: #313131;
+  display: block;
+}
+footer .top-footer .container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -982,7 +1108,75 @@ section.features .container, section.cta .container, section.creative-team .cont
       -ms-flex-align: center;
           align-items: center;
 }
-
+footer .top-footer .container .logo {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  text-align: center;
+}
+footer .top-footer .container nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+footer .top-footer .container nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0;
+  margin: 0;
+}
+footer .top-footer .container nav ul li {
+  text-align: center;
+}
+footer .top-footer .container nav ul li a {
+  text-decoration: none;
+  color: #6b6b6b;
+}
+footer .top-footer .container nav ul li a:hover {
+  color: #fff;
+}
+footer .top-footer .container nav ul li a:hover i {
+  background: #31aae2;
+}
+footer .top-footer .container nav ul li a i {
+  width: 45px;
+  height: 45px;
+  background: #4a4a4a;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 13px;
+}
+footer .top-footer .container nav ul li a .icon-title {
+  margin-top: 5px;
+}
+footer .mid-footer {
+  background: #2d2d2d;
+}
 footer .mid-footer .container {
   width: 100%;
   display: -webkit-box;
@@ -999,15 +1193,22 @@ footer .mid-footer .container {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-
-button {
-  padding: 15px 30px;
+footer .bot-footer {
+  background: #313131;
+}
+footer.home .top-footer {
+  display: none;
+}
+:not(.accordion) > button {
+  padding: 20px 30px;
   border: 0;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  background: #31aae2;
+  color: #fff;
 }
 
 header {

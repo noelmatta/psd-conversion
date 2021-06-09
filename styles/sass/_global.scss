@@ -30,11 +30,11 @@ $black: #313131;
 // Extends
 %pie {
   @include flex($orientation:column, $justify:center, $width: initial);  
-  min-width: 175px;
+  min-width: 145px;
   margin: 0;
-  min-height: 175px;
+  min-height: 145px;
   border-radius: 50%;
-  border: 35px solid transparent;
+  border: 30px solid transparent;
   background-repeat: no-repeat; 
 }
 
@@ -51,8 +51,18 @@ h1, h2, h3, h4, h5, h6 {
   color: $black;
 }
 
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
 h4 {
   font-size: 1rem;
+}
+
+p:first-of-type {
+  margin-top: 0;
 }
 
 ul li {
@@ -93,7 +103,6 @@ ul li {
     }
     h3 {
       order: 1;
-      font-size: 1.6rem;
       color: $primary-color;
       font-weight: 700;
     }
@@ -109,16 +118,32 @@ ul li {
   }
 }
 
-.hero-overlay {
+.overlay {
   @include overlay;
+  &+.container button {
+    background: $secondary-color;
+    color: $black;
+  }
 }
 
 // Wrappers & Containers
 
-section {
-  padding: 30px 0;
+section.features, section.cta, section.creative-team, section.tech-stack, section.contact {
+  .container {
+    @include flex($align: inherit);
+  }
 }
 
+section:not(.cta) {
+  padding: 80px 0;
+}
+
+section.cta {
+  padding: 25px 0;
+  .container {
+    align-items: center;
+  }
+}
 .shaded {
   background: $secondary-color;
 }
@@ -131,11 +156,11 @@ section {
   position: relative;
 }
 
-section > h3 {
+section > h2 {
   text-align:center;
-  font-size:2rem;
   color: #000;
   font-weight:400;
+  margin: 0;
 }
 
 .full-width {
@@ -183,21 +208,21 @@ section.features {
   .container .card {
     border: 1px solid $secondary-color;
     width: calc(25% - 20px);
-    min-height: 320px;
+    // min-height: 320px;
     .icon {
       background: $secondary-color;
       @include flex($justify:center);
       color: #dadada;
       font-size: 1.5rem;
-      min-height: 110px;
+      // min-height: 110px;
+      padding: 55px 0;
     }
     &:hover .icon {
       color: #31aae2;
     }
     .content {
-      text-align: center;
-      // min-height: 210px;
-      padding: 0 30px;
+      text-align: center;      
+      padding: 15px 30px;
       @include flex($orientation: column, $justify: space-around);
     }
   }
@@ -215,25 +240,23 @@ section.project-gallery {
   background-size: cover;
   background-position: top;
   position: relative;
-  .project-gallery-overlay {
+  .overlay {
     @include overlay;
   }
   .container {
-    @include flex($align: flex-start);
+    @include flex($align: stretch);
     h3, h4, i {
       color: $primary-color;
     }
     p {
       color: #a5ddf1;
     }
-    .gallery-slider, .gallery-details {
-      width: calc(50% - 15px);
-    }
     .gallery-slider {
+      width: calc(50% - 15px);
       .full-img {
         .img-selector {
           width: 100%;
-          height: 422px;
+          height: 400px;
           img {
             width: 100%;
             height: 100%;
@@ -243,7 +266,7 @@ section.project-gallery {
         .gallery-thumbs {
           @include flex($justify: space-evenly);
           background: rgba(255,255,255,0.1);
-          padding: 20px 0;
+          padding: 18px 0;
           img {
             width: 65px;
             object-fit: cover;
@@ -255,22 +278,24 @@ section.project-gallery {
       }
     }
     .gallery-details {
+      @include flex($orientation:column, $width: calc(50% - 15px), $align: start);
       h3 {
-        font-size: 1.6rem;
-        margin-top:0;
+        margin:0;
       }
       .gallery-features {
         @include flex;
         flex-wrap: wrap;
         .gallery-feature {
-          width: 50%;
+          width: calc(50% - 15px);
+          margin-bottom: 15px;
           .icon {
             float: left;
             font-size: 1rem;
             margin-right: 10px;
           }
           h4 {
-            display: inline;
+            display: inline-block;
+            margin: 0 0 20px 0;
           }
         }
       }
@@ -288,7 +313,7 @@ section.testimonials {
   .container {
     padding: 0 90px;
   }
-  .testimonials-overlay {
+  .overlay {
     @include overlay;
   }
   blockquote {
@@ -308,7 +333,7 @@ section.testimonials {
     text-align: center;    
   }
   .testimonial-content {
-    margin: 40px;
+    margin: 40px 0 0 0;
   }
   .testimonial-slider {
     @include flex;
@@ -367,13 +392,16 @@ section.latest-projects {
 }
 
 section.contact {
+  h3 {
+    margin-top: 0;
+  }
   .contact-form {
-    width: calc(50% - 15px);
+    @include flex($orientation:column, $width: calc(50% - 15px), $align: initial, $justify: initial);
     form {
       label {
         position: relative;
         display: block;
-        margin: 15px 0;
+        margin-bottom: 15px;
         input, textarea {
           border: 1px solid #f1f1f1;
           width: 100%;
@@ -384,6 +412,9 @@ section.contact {
             padding: 20px 0;            
           }
         }
+        textarea {
+          min-height:100px;
+        }
       }
       button {
         width: 100%;
@@ -393,11 +424,54 @@ section.contact {
   .contact-accordions {
     width: calc(50% - 15px);
     .accordion {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 15px;
+      &.open {
+        button {
+          color: #31aae2;
+          &:before {
+            color: $primary-color;
+            background: #31aae2;
+            content: '-';
+          }
+        }
+      }
+      &.closed {
+        .panel-photo, .panel {
+          display: none;
+        }
+      }
       img {
         width: 100%;
         height: 150px;
         object-fit: cover;
         object-position: top;
+      }
+      button {
+        background: white;
+        position: relative;
+        border: none;
+        width: 100%;
+        text-align: left;
+        padding: 15px 60px;
+        color: #969595;
+        font-size: 1rem;
+        cursor: pointer;
+        &:before {
+          content: '+';
+          position: absolute;
+          margin-left: -40px;
+          background: #dadada;
+          color: #fff;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          text-align: center;
+          top: 14px;          
+        }
+      }
+      .panel {
+        padding: 10px 60px;
       }
     }
   }
@@ -512,12 +586,12 @@ section.creative-team {
     }
     @include flex($orientation:column);
     width: calc(25% - 20px);
+    margin-top: 20px;
     background: $primary-color;
     img {
       width: 100%;
       height: 265px;
-      object-fit: cover;
-      object-position: top;      
+      object-fit: cover;   
     }
     h4.profile-name {
       text-align: center;
@@ -548,26 +622,86 @@ section.creative-team {
   }
 }
 
-section.features, section.cta, section.creative-team, section.tech-stack, section.contact {
-  .container {
-    @include flex;
+footer {
+  color: $copy;
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+  }
+  .top-footer {
+    background: #313131;
+    display: block;
+    .container {
+      @include flex;
+      .logo {
+        flex: 2;
+        text-align:center;
+      }
+      nav {
+        @include flex($justify:space-around);
+        flex: 1;
+        ul {
+          @include flex;
+          padding-left:0;
+          margin: 0;
+          li {
+            text-align: center;
+            a {
+              text-decoration: none;
+              color: #6b6b6b;
+              &:hover {
+                color: $primary-color;
+                i {
+                  background: #31aae2;
+                }
+              }
+              i {
+                width: 45px;
+                height: 45px;
+                background: #4a4a4a;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                padding: 13px;
+              }
+              .icon-title {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mid-footer {
+    background: #2d2d2d;
+    .container {
+      @include flex($align: flex-start);
+    }
+  }
+  .bot-footer {
+    background: #313131;
+  }
+  &.home {
+    .top-footer {
+      display: none;
+    }
+    .mid-footer {}
+    .bot-footer {}
   }
 }
 
- footer .mid-footer {
-   .container {
-     @include flex($align: flex-start);
-   }
- }
 
 // Form elements
 
-button {
-  padding: 15px 30px;
+
+
+:not(.accordion) > button {
+  padding: 20px 30px;
   border: 0;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  background: #31aae2;
+  color: $primary-color;
 }
