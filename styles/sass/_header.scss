@@ -16,6 +16,9 @@ header {
     padding: 0 15px;
   } 
   .logo {
+    a {
+      display: flex;
+    }
     flex: 1;
     display: flex;
     justify-content: space-between;
@@ -44,25 +47,31 @@ header {
         a {
           color: $header-nav-item-color;
           text-decoration: none;
+          &:hover {
+            border-bottom: 3px solid $header-nav-item-color;
+          }
         }
       }
     }
   }
   .icons {
-    display: flex;
+    @include flex($justify:flex-end);
     flex: 1;
-    justify-content: flex-end;
-    align-items: center;
     flex-direction: row;
-    i {
+    a {
       color: $header-nav-item-color;
       background: $header-icon-bg;
-      padding: 12px;
       border-radius: 50%;
-      text-align: center;
-      margin-left: 10px;
-      flex-grow: 0;
-      font-size: 0.7rem;
+      text-decoration: none;
+      @include flex($justify: space-around);
+      width: 30px;
+      height: 30px;
+      font-size: 0.6rem;
+      margin-left: 8px;
+      &:hover {
+        color: $header-icon-bg;
+        background: $header-nav-item-color;
+      }
     }
   }
 }
