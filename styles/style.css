@@ -320,11 +320,11 @@ nav ul li {
   display: inline-block;
 }
 
-.home.hero {
-  background-image: url("/images/thought-catalog-505eectW54k-unsplash.jpeg");
+.hero {
+  background-image: url("/images/city_hero.png");
   background-size: cover;
   position: relative;
-  height: 100vh;
+  height: 40%;
   margin-top: -85px;
   width: 100%;
   display: -webkit-box;
@@ -341,7 +341,7 @@ nav ul li {
       -ms-flex-align: center;
           align-items: center;
 }
-.home.hero .hero-text {
+.hero .hero-text {
   position: relative;
   z-index: 1;
   color: #fff;
@@ -359,37 +359,32 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: translateY(-10%);
-          transform: translateY(-10%);
 }
-.home.hero .hero-text h1 {
-  text-transform: uppercase;
+.hero .hero-text h1 {
   font-size: 4rem;
-  border: 5px solid #fff;
-  padding: 0 45px;
-  margin: 0 0 10px 0;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
   color: #fff;
-  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin: 80px 0 0 0;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
 }
-.home.hero .hero-text h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
+.hero .hero-text h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
   color: #fff;
+  opacity: 0.5;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
 }
-.home.hero .hero-text h3 {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  color: #fff;
-  font-weight: 700;
-}
-.home.hero .scroll-down {
+.hero .scroll-down {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -397,10 +392,10 @@ nav ul li {
   margin-bottom: 10%;
   font-size: 5rem;
 }
-.home.hero .scroll-down a {
+.hero .scroll-down a {
   color: #ffffff;
 }
-.home.hero .scroll-down a:hover {
+.hero .scroll-down a:hover {
   color: #31aae2;
 }
 
@@ -412,7 +407,7 @@ nav ul li {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(225deg, #38c5f3 0%, #609622 100%);
+  background: linear-gradient(225deg, #3b3e3f 0%, #31aae2 90%);
   z-index: 0;
   opacity: 0.9;
 }
@@ -421,7 +416,7 @@ nav ul li {
   color: #313131;
 }
 
-section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container, section.contact .container {
+section.features .container, section.cta .container, section.creative-team .container, section.tech-stack .container, section.contact .container, section.contact-page .container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -582,7 +577,7 @@ section.cta p {
 }
 
 section.project-gallery {
-  background: url("/images/section_bg.png");
+  background: url("/images/bg_image.png");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -595,9 +590,10 @@ section.project-gallery .overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(225deg, #38c5f3 0%, #609622 100%);
+  background: rgba(49, 160, 226, 0.85);
   z-index: 0;
   opacity: 0.9;
+  opacity: 1;
 }
 section.project-gallery .container {
   width: 100%;
@@ -743,7 +739,7 @@ section.testimonials .overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(225deg, #38c5f3 0%, #609622 100%);
+  background: rgba(73, 172, 141, 0.77);
   z-index: 0;
   opacity: 0.9;
 }
@@ -1243,6 +1239,31 @@ section.clients .container .client-logos img.active {
   opacity: 1;
 }
 
+section.contact-page .container .contact-card {
+  width: calc( (100% / 3) - 15px);
+  background: #fff;
+  padding: 60px 80px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+section.contact-page .container .contact-card:hover, section.contact-page .container .contact-card:focus {
+  border: 1px solid #31aae2;
+}
+section.contact-page .container .contact-card i {
+  font-size: 2rem;
+  color: #31aae2;
+}
+section.contact-page .container .contact-card h4 {
+  margin: 35px 0;
+}
+section.contact-page .container .contact-card .details .detail a {
+  text-decoration: none;
+  color: #969595;
+}
+section.contact-page .container .contact-card .details .detail a:hover, section.contact-page .container .contact-card .details .detail a:focus {
+  color: #31aae2;
+}
+
 footer {
   color: #969595;
 }
@@ -1553,23 +1574,6 @@ footer .bot-footer .container .copyright {
   color: #6b6b6b;
   font-size: 0.85rem;
 }
-footer.home .top-footer {
-  display: none;
-}
-footer.home .mid-footer .container .about, footer.home .mid-footer .container .useful-links, footer.home .mid-footer .container .mailing-list {
-  display: none;
-}
-footer.home .mid-footer .container .archives, footer.home .mid-footer .container .latest-news, footer.home .mid-footer .container .footer-contact {
-  display: block;
-}
-footer.home .bot-footer .container {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-footer.home .bot-footer .container nav {
-  display: none;
-}
 
 :not(.accordion) > button {
   padding: 20px 30px;
@@ -1709,4 +1713,99 @@ header .icons a {
 header .icons a:hover {
   color: #31aae2;
   background: #fffefe;
+}
+
+.home.hero {
+  background-image: url("/images/thought-catalog-505eectW54k-unsplash.jpeg");
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  margin-top: -85px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.home.hero .hero-text {
+  -webkit-transform: translateY(-10%);
+          transform: translateY(-10%);
+}
+.home.hero .hero-text h1 {
+  border: 5px solid #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0 45px;
+  margin: 0 0 25px 0;
+  letter-spacing: initial;
+}
+.home.hero .hero-text h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: initial;
+  opacity: 1;
+  text-transform: initial;
+  font-family: "Open Sans", sans-serif;
+}
+.home.hero .hero-text h3 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+.home.hero .scroll-down {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5%;
+  font-size: 5rem;
+}
+.home.hero .scroll-down a {
+  color: #ffffff;
+}
+.home.hero .scroll-down a:hover {
+  color: #31aae2;
+}
+.home.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(225deg, #38c5f3 0%, #609622 100%);
+  z-index: 0;
+  opacity: 0.9;
+}
+
+footer.home .top-footer {
+  display: none;
+}
+footer.home .mid-footer .container .about, footer.home .mid-footer .container .useful-links, footer.home .mid-footer .container .mailing-list {
+  display: none;
+}
+footer.home .mid-footer .container .archives, footer.home .mid-footer .container .latest-news, footer.home .mid-footer .container .footer-contact {
+  display: block;
+}
+footer.home .bot-footer .container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer.home .bot-footer .container nav {
+  display: none;
 }

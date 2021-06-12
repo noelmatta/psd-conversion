@@ -10,6 +10,14 @@ $teal: #73c8b7;
 $pink: #eb768c;
 
 // Mixins
+@mixin banners($bg-image: url('/images/city_hero.png'), $height: 40%) {
+  background-image: $bg-image;
+  background-size: cover;
+  position: relative;
+  height: $height;
+  margin-top: -85px;  
+}
+
 @mixin flex($orientation: row, $justify: space-between, $align: center, $width: 100%) {
   width: $width;
   display: flex;
@@ -18,7 +26,7 @@ $pink: #eb768c;
   align-items: $align;  
 }
 
-@mixin overlay($bg-gradient: linear-gradient(225deg, rgba(56,197,243,1) 0%, rgba(96,150,34,1) 100%)) {
+@mixin overlay($bg-gradient: linear-gradient(225deg, rgba(59,62,63,1) 0%, rgba(49,170,226,1) 90%)) {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -93,39 +101,33 @@ nav ul {
 
 
 // Hero banners
-.home.hero {
-  background-image: url('/images/thought-catalog-505eectW54k-unsplash.jpeg');
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-  margin-top: -85px;  
+.hero {
+  @include banners;
   @include flex($orientation: column, $justify: center);
   .hero-text {
     position: relative;
     z-index: 1;
     color: $primary-color;
     @include flex($orientation: column);
-    transform: translateY(-10%);
     h1 {
-      text-transform: uppercase;
       font-size: 4rem;
-      border: 5px solid $primary-color;
-      padding: 0 45px;   
-      margin: 0 0 10px 0;  
       order: 2; 
       color: $primary-color;
-      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      margin: 80px 0 0 0;
+      line-height: 1.5;
+      letter-spacing: 0.1rem;
     }
     h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
+      font-size: 2.2rem;
+      font-weight: 600;
       order: 3;
       color: $primary-color;
-    }
-    h3 {
-      order: 1;
-      color: $primary-color;
-      font-weight: 700;
+      opacity: 0.5;
+      margin: 0;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
     }
   }
   .scroll-down {
@@ -154,7 +156,7 @@ nav ul {
 
 // Wrappers & Containers
 
-section.features, section.cta, section.creative-team, section.tech-stack, section.contact {
+section.features, section.cta, section.creative-team, section.tech-stack, section.contact, section.contact-page {
   .container {
     @include flex($align: inherit);
   }
@@ -265,12 +267,13 @@ section.cta {
 }
 
 section.project-gallery {
-  background: url('/images/section_bg.png');
+  background: url('/images/bg_image.png');
   background-size: cover;
   background-position: top;
   position: relative;
   .overlay {
-    @include overlay;
+    @include overlay($bg-gradient: rgba(49,160,226,0.85));
+    opacity: 1;
   }
   .container {
     @include flex($align: stretch);
@@ -343,7 +346,7 @@ section.testimonials {
     padding: 0 90px;
   }
   .overlay {
-    @include overlay;
+    @include overlay($bg-gradient: rgba(73,172,141,0.77));
   }
   blockquote {
     font-size: 1.2rem;
@@ -739,6 +742,39 @@ section.clients {
   }
 }
 
+section.contact-page {
+  .container {
+    .contact-card {
+      &:hover, &:focus {
+        border: 1px solid $blue;
+      }
+      width: calc( (100% / 3) - 15px);
+      background: $primary-color;
+      padding: 60px 80px;
+      text-align: center;
+      border: 1px solid $primary-color;
+      i {
+        font-size: 2rem;
+        color: $blue;
+      }
+      h4 {
+        margin: 35px 0;
+      }
+      .details {
+        .detail {
+          a {
+            text-decoration: none;
+            color: $copy;
+            &:hover, &:focus {
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 footer {
   color: $copy;
   h1, h2, h3, h4, h5, h6 {
@@ -948,30 +984,8 @@ footer {
       }
     }
   }
-  &.home {
-    .top-footer {
-      display: none;
-    }
-    .mid-footer {
-      .container {
-        .about, .useful-links, .mailing-list {
-          display: none;
-        }
-        .archives, .latest-news, .footer-contact {
-          display: block;
-        }
-      }
-    }
-    .bot-footer {
-      .container {
-        justify-content: center;
-        nav {
-          display: none;
-        }
-      }
-    }
-  }
 }
+
 
 
 // Form elements

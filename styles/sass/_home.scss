@@ -1,10 +1,73 @@
-// section.home.hero {
-//   .hero-text {
-//     h1 {
-//       text-transform: uppercase;
-//       font-size: 4rem;
-//       border: 4px solid #ffffff;
-//       padding: 10px 30px;
-//     }
-//   }
-// }
+.home.hero {
+  @include banners($height: 100vh, $bg-image: url('/images/thought-catalog-505eectW54k-unsplash.jpeg'));
+  @include flex($orientation: column, $justify: center);
+  .hero-text {
+    transform: translateY(-10%);
+    h1 {
+      border: 5px solid $primary-color;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0 45px;   
+      margin: 0 0 25px 0;
+      letter-spacing: initial;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: initial;
+      opacity: 1;
+      text-transform: initial;
+      font-family: 'Open Sans', sans-serif;
+    }
+    h3 {
+      order: 1;
+      color: $primary-color;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+  }
+  .scroll-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 5rem;
+    a {
+      color: #ffffff;
+      &:hover {
+        color:$blue;
+      }
+    }
+  }
+  .overlay {
+  @include overlay($bg-gradient: linear-gradient(225deg, rgba(56,197,243,1) 0%, rgba(96,150,34,1) 100%));
+  }
+}
+
+footer {
+  &.home {
+    .top-footer {
+      display: none;
+    }
+    .mid-footer {
+      .container {
+        .about, .useful-links, .mailing-list {
+          display: none;
+        }
+        .archives, .latest-news, .footer-contact {
+          display: block;
+        }
+      }
+    }
+    .bot-footer {
+      .container {
+        justify-content: center;
+        nav {
+          display: none;
+        }
+      }
+    }
+  }  
+}
