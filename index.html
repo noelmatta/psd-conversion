@@ -110,35 +110,63 @@
         <div class="overlay"></div>
         <div class="container">
           <nav class="testimonial-menu">
-            <div class="headshot">
+            <div class="headshot headshot-1 active">
               <img src="./images/team_01.png" alt="">
             </div>
-            <div class="headshot">
+            <div class="headshot headshot-2">
               <img src="./images/team_02.png" alt="">
             </div>
-            <div class="headshot">
+            <div class="headshot headshot-3">
               <img src="./images/team_03.png" alt="">
             </div>
-            <div class="headshot">
+            <div class="headshot headshot-4">
               <img src="./images/team_01.png" alt="">
             </div>
-            <div class="headshot">
+            <div class="headshot headshot-5">
               <img src="./images/team_02.png" alt="">
             </div>
-            <div class="headshot">
+            <div class="headshot headshot-6">
               <img src="./images/team_03.png" alt="">
             </div>
           </nav>
           <div class="testimonial-slider">
             <div class="arrow prev">
-              <i class="fas fa-chevron-left"></i>
+              <i class="fas fa-chevron-left" onclick="changeTestimonial('prev')"></i>
             </div>
-            <div class="testimonial-content">
+            <div class="testimonial-content slide-0 active">
               <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.</blockquote>
               <div class="source">David Martin</div>
             </div>
+            <div class="testimonial-content slide-1">
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.
+              </blockquote>
+              <div class="source">Slide 2</div>
+            </div>
+            <div class="testimonial-content slide-2">
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.
+              </blockquote>
+              <div class="source">Slide 3</div>
+            </div>
+            <div class="testimonial-content slide-3">
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis
+                nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.
+              </blockquote>
+              <div class="source">Slide 4</div>
+            </div>
+            <div class="testimonial-content slide-4">
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis
+                nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.
+              </blockquote>
+              <div class="source">Slide 5</div>
+            </div>
+            <div class="testimonial-content slide-5">
+              <blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum egetvel lacus pretium rhoncus a quis
+                nisly Ut vehicula gravida dui in pulvinar donec diam elit consequat eget augue vitae aliquet sollicitudin.
+              </blockquote>
+              <div class="source">Slide 6</div>
+            </div>
             <div class="arrow next">
-              <i class="fas fa-chevron-right"></i>
+              <i class="fas fa-chevron-right" onclick="changeTestimonial()"></i>
             </div>
           </div>
         </div>

@@ -772,9 +772,14 @@ section.testimonials .arrow i {
           align-items: center;
   width: 45px;
   height: 45px;
+  cursor: pointer;
 }
 section.testimonials .testimonial-content {
   margin: 40px 0 0 0;
+  display: none;
+}
+section.testimonials .testimonial-content.active {
+  display: block;
 }
 section.testimonials .testimonial-slider {
   width: 100%;
@@ -814,8 +819,9 @@ section.testimonials .testimonial-menu .headshot {
   max-height: 60px;
   margin: 0 10px;
 }
-section.testimonials .testimonial-menu .headshot:hover {
+section.testimonials .testimonial-menu .headshot:hover, section.testimonials .testimonial-menu .headshot.active {
   opacity: 1;
+  cursor: pointer;
 }
 section.testimonials .testimonial-menu .headshot img {
   width: 100%;

@@ -363,11 +363,16 @@ section.testimonials {
       @include flex($justify: space-around);
       width: 45px;
       height: 45px;
+      cursor:pointer;
     }
     width: initial;
   }
   .testimonial-content {
     margin: 40px 0 0 0;
+    display: none;
+    &.active {
+      display: block;
+    }
   }
   .testimonial-slider {
     @include flex;
@@ -379,8 +384,9 @@ section.testimonials {
       max-width: 60px;
       max-height: 60px;
       margin: 0 10px;
-      &:hover {
+      &:hover, &.active {
         opacity: 1;
+        cursor: pointer;
       }
       img {
         width: 100%;
