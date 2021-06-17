@@ -623,6 +623,10 @@ section.project-gallery .container .gallery-slider {
 section.project-gallery .container .gallery-slider .full-img .img-selector {
   width: 100%;
   height: 400px;
+  display: none;
+}
+section.project-gallery .container .gallery-slider .full-img .img-selector.active {
+  display: block;
 }
 section.project-gallery .container .gallery-slider .full-img .img-selector img {
   width: 100%;
@@ -648,13 +652,17 @@ section.project-gallery .container .gallery-slider .full-img .gallery-thumbs {
   background: rgba(255, 255, 255, 0.1);
   padding: 18px 0;
 }
-section.project-gallery .container .gallery-slider .full-img .gallery-thumbs img {
+section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail:hover img, section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail.active img {
+  opacity: 1;
+}
+section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail img {
   width: 65px;
   -o-object-fit: cover;
      object-fit: cover;
   height: 65px;
   border: 3px solid #a7c9df;
   border-radius: 50%;
+  opacity: 0.65;
 }
 section.project-gallery .container .gallery-details {
   width: calc(50% - 15px);
@@ -743,18 +751,37 @@ section.testimonials .overlay {
   z-index: 0;
   opacity: 0.9;
 }
-section.testimonials blockquote {
+section.testimonials .testimonial-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+section.testimonials .testimonial-container blockquote {
   font-size: 1.2rem;
   text-align: center;
 }
-section.testimonials .source {
+section.testimonials .testimonial-container .source {
   text-align: center;
   font-size: 0.95rem;
 }
-section.testimonials .arrow {
+section.testimonials .testimonial-container .arrow {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   width: initial;
 }
-section.testimonials .arrow i {
+section.testimonials .testimonial-container .arrow i {
   border: 1px solid #fff;
   border-radius: 50%;
   width: 100%;
@@ -774,28 +801,12 @@ section.testimonials .arrow i {
   height: 45px;
   cursor: pointer;
 }
-section.testimonials .testimonial-content {
+section.testimonials .testimonial-container .testimonial-content {
   margin: 40px 0 0 0;
   display: none;
 }
-section.testimonials .testimonial-content.active {
+section.testimonials .testimonial-container .testimonial-content.active {
   display: block;
-}
-section.testimonials .testimonial-slider {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 section.testimonials .testimonial-menu {
   width: 100%;
@@ -813,17 +824,17 @@ section.testimonials .testimonial-menu {
       -ms-flex-align: initial;
           align-items: initial;
 }
-section.testimonials .testimonial-menu .headshot {
+section.testimonials .testimonial-menu .testimonial-thumbnail {
   opacity: 0.65;
   max-width: 60px;
   max-height: 60px;
   margin: 0 10px;
 }
-section.testimonials .testimonial-menu .headshot:hover, section.testimonials .testimonial-menu .headshot.active {
+section.testimonials .testimonial-menu .testimonial-thumbnail:hover, section.testimonials .testimonial-menu .testimonial-thumbnail.active {
   opacity: 1;
   cursor: pointer;
 }
-section.testimonials .testimonial-menu .headshot img {
+section.testimonials .testimonial-menu .testimonial-thumbnail img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -912,8 +923,8 @@ section.latest-projects .projects .project .project-preview .project-actions {
   -webkit-transform: translateY(-30.5px);
           transform: translateY(-30.5px);
   padding: 10px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(39%, rgba(255, 255, 255, 0.8)), color-stop(30%, transparent));
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 39%, transparent 30%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(255, 255, 255, 0.8)), color-stop(30%, transparent));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 40%, transparent 30%);
   border-radius: 20px;
 }
 section.latest-projects .projects .project .project-preview .project-actions a:hover i {
