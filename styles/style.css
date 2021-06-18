@@ -654,6 +654,7 @@ section.project-gallery .container .gallery-slider .full-img .gallery-thumbs {
 }
 section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail:hover img, section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail.active img {
   opacity: 1;
+  cursor: pointer;
 }
 section.project-gallery .container .gallery-slider .full-img .gallery-thumbs .gallery-thumbnail img {
   width: 65px;

@@ -1,5 +1,46 @@
-
+const projectData = [
+  {
+    id: 'project-1',
+    categories: ['logo', 'business', 'branding']
+  },
+  {
+    id: 'project-2',
+    categories: ['business', 'photography']
+  },
+  {
+    id: 'project-3',
+    categories: ['logo', 'graphic', 'photography']
+  },
+  {
+    id: 'project-4',
+    categories: ['typography', 'branding', 'business']
+  },
+  {
+    id: 'project-5',
+    categories: ['graphic']
+  },
+  {
+    id: 'project-6',
+    categories: ['typography', 'logo', 'photography']
+  }
+]
 // Functions
+filterProject = (category) => {
+  
+  // const results = projectData.filter(query => {
+  //   query.categories.forEach(nestedQuery => {
+  //     nestedQuery.includes(category) ? ;
+      
+  //   })
+    
+  // })
+  
+}
+
+
+// var check_orders = orders.filter(order => (order.name === "John Appleseed"));
+// console.log(check_orders);
+
 prevNextSlide = (selection, slideType) => {
 
   const slides = Array.from(document.querySelectorAll(slideType));
@@ -43,3 +84,14 @@ setActive = (selected) => {
   
 }
 
+toggleAccordion = (e) => {
+  const currentAccordion = '.' + e.parentNode.classList[0];
+  const accordions = Array.from(document.querySelectorAll(currentAccordion));
+
+  accordions.forEach((accordion) => {
+    accordion.classList.remove('open');
+    accordion.classList.add('closed');
+  })
+  e.parentNode.classList.remove('closed');
+  e.parentNode.classList.add('open');
+}

@@ -241,17 +241,17 @@
         <div class="container">
           <nav class="project-filters">
             <ul>
-              <li><a href="" class="active">All</a></li>
-              <li><a href="">Logo</a></li>
-              <li><a href="">Business</a></li>
-              <li><a href="">Photography</a></li>
-              <li><a href="">Branding</a></li>
-              <li><a href="">Graphic</a></li>
-              <li><a href="">Typography</a></li>
+              <li><a href="javascript:void(0)" class="active" onclick="filterProject('all')">All</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('logo')">Logo</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('business')">Business</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('photography')">Photography</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('branding')">Branding</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('graphic')">Graphic</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject('typography')">Typography</a></li>
             </ul>
           </nav>
           <div class="projects">
-            <div class="project">
+            <div class="project" id="project-1">
               <a href="">
                 <img src="./images/proj_1.png" alt="" />
               </a>
@@ -263,7 +263,7 @@
                 </div>
               </div>
             </div>
-            <div class="project">
+            <div class="project" id="project-2">
               <a href="">
                 <img src="./images/proj_2.png" alt="" />
               </a>
@@ -275,7 +275,7 @@
                 </div>
               </div>
             </div>
-            <div class="project">
+            <div class="project" id="project-3">
               <a href="">
                 <img src="./images/proj_3.png" alt="" />
               </a>
@@ -287,7 +287,7 @@
                 </div>
               </div>
             </div>
-            <div class="project">
+            <div class="project" id="project-4">
               <a href="">
                 <img src="./images/proj_4.png" alt="" />
               </a>
@@ -299,7 +299,7 @@
                 </div>
               </div>
             </div>
-            <div class="project">
+            <div class="project" id="project-5">
               <a href="">
                 <img src="./images/proj_5.png" alt="" />
               </a>
@@ -311,7 +311,7 @@
                 </div>
               </div>
             </div>
-            <div class="project">
+            <div class="project" id="project-6">
               <a href="">
                 <img src="./images/proj_6.png" alt="" />
               </a>
@@ -539,14 +539,14 @@
 
             <div class="accordion open">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Services We Provide</button>
+              <button class="accordion-toggle" onclick="toggleAccordion(this)">Services We Provide</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis miristum nulla.</p>
               </div>              
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Huge Corporate Responsibility</button>
+              <button class="accordion-toggle" onclick="toggleAccordion(this)">Huge Corporate Responsibility</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>
@@ -554,7 +554,7 @@
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Free Demo Content Installations</button>
+              <button class="accordion-toggle" onclick="toggleAccordion(this)">Free Demo Content Installations</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>

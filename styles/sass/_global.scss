@@ -306,6 +306,7 @@ section.project-gallery {
           .gallery-thumbnail {
             &:hover img, &.active img {
               opacity: 1;
+              cursor: pointer;
             }
             img {
               width: 65px;
