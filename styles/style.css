@@ -805,6 +805,7 @@ section.testimonials .testimonial-container .arrow i {
 section.testimonials .testimonial-container .testimonial-content {
   margin: 40px 0 0 0;
   display: none;
+  min-height: 160px;
 }
 section.testimonials .testimonial-container .testimonial-content.active {
   display: block;
@@ -849,12 +850,12 @@ section.latest-projects nav.project-filters ul li:not(:last-of-type)::after {
   content: "/";
   margin: 0 30px;
 }
+section.latest-projects nav.project-filters ul li.active a {
+  color: #31aae2;
+}
 section.latest-projects nav.project-filters ul li a {
   color: #969595;
   text-decoration: none;
-}
-section.latest-projects nav.project-filters ul li a.active {
-  color: #31aae2;
 }
 section.latest-projects .projects {
   display: -webkit-box;
@@ -871,6 +872,16 @@ section.latest-projects .projects .project {
   max-width: calc(100% / 3);
   position: relative;
   max-height: 250px;
+  visibility: hidden;
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+section.latest-projects .projects .project.active {
+  visibility: initial;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 section.latest-projects .projects .project:hover .project-preview {
   width: 100%;

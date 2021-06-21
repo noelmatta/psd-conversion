@@ -241,17 +241,17 @@
         <div class="container">
           <nav class="project-filters">
             <ul>
-              <li><a href="javascript:void(0)" class="active" onclick="filterProject('all')">All</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('logo')">Logo</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('business')">Business</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('photography')">Photography</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('branding')">Branding</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('graphic')">Graphic</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject('typography')">Typography</a></li>
+              <li class="active"><a href="javascript:void(0)" onclick="filterProject(this)" data-name="all">All</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="logo">Logo</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="business">Business</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="photography">Photography</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="branding">Branding</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="graphic">Graphic</a></li>
+              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="typography">Typography</a></li>
             </ul>
           </nav>
           <div class="projects">
-            <div class="project" id="project-1">
+            <div class="project active" id="project-1">
               <a href="">
                 <img src="./images/proj_1.png" alt="" />
               </a>
@@ -263,7 +263,7 @@
                 </div>
               </div>
             </div>
-            <div class="project" id="project-2">
+            <div class="project active" id="project-2">
               <a href="">
                 <img src="./images/proj_2.png" alt="" />
               </a>
@@ -275,7 +275,7 @@
                 </div>
               </div>
             </div>
-            <div class="project" id="project-3">
+            <div class="project active" id="project-3">
               <a href="">
                 <img src="./images/proj_3.png" alt="" />
               </a>
@@ -287,7 +287,7 @@
                 </div>
               </div>
             </div>
-            <div class="project" id="project-4">
+            <div class="project active" id="project-4">
               <a href="">
                 <img src="./images/proj_4.png" alt="" />
               </a>
@@ -299,7 +299,7 @@
                 </div>
               </div>
             </div>
-            <div class="project" id="project-5">
+            <div class="project active" id="project-5">
               <a href="">
                 <img src="./images/proj_5.png" alt="" />
               </a>
@@ -311,7 +311,7 @@
                 </div>
               </div>
             </div>
-            <div class="project" id="project-6">
+            <div class="project active" id="project-6">
               <a href="">
                 <img src="./images/proj_6.png" alt="" />
               </a>

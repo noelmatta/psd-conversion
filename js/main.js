@@ -1,3 +1,6 @@
+// const myJS = {
+
+// }
 const projectData = [
   {
     id: 'project-1',
@@ -24,22 +27,43 @@ const projectData = [
     categories: ['typography', 'logo', 'photography']
   }
 ]
+
 // Functions
-filterProject = (category) => {
-  
-  // const results = projectData.filter(query => {
-  //   query.categories.forEach(nestedQuery => {
-  //     nestedQuery.includes(category) ? ;
-      
-  //   })
-    
-  // })
-  
+filterProject = (e) => {
+  const searchTerm = e.dataset.name;
+  const projects = document.querySelectorAll('.project');
+  const navListClass = e.parentNode.parentNode.parentNode.classList[0];
+  const navList = document.querySelectorAll('.' + navListClass + ' ul li');
+  const results = [];
+
+  navList.forEach((listItem) => {
+    listItem.classList.remove('active');
+  })
+
+  e.parentNode.classList.add('active');
+
+  if (searchTerm !== 'all') {
+    projectData.map((query) => {
+      query.categories.map((subQuery) => {
+        if (subQuery == searchTerm) {
+          results.push(query.id);
+        }
+      })
+    })
+    projects.forEach((project) => {
+      project.classList.remove('active');
+    })
+    results.map((result) => {
+      document.querySelector('#' + result).classList.add('active');
+    })
+  } else {
+    projects.forEach((project) => {
+      project.classList.add('active');
+    })
+  }
 }
 
 
-// var check_orders = orders.filter(order => (order.name === "John Appleseed"));
-// console.log(check_orders);
 
 prevNextSlide = (selection, slideType) => {
 
@@ -95,3 +119,6 @@ toggleAccordion = (e) => {
   e.parentNode.classList.remove('closed');
   e.parentNode.classList.add('open');
 }
+
+
+// myJS.init();

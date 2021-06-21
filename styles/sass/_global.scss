@@ -384,6 +384,7 @@ section.testimonials {
     .testimonial-content {
       margin: 40px 0 0 0;
       display: none;
+      min-height:160px;
       &.active {
         display: block;
       }
@@ -419,12 +420,12 @@ section.latest-projects {
           content: '/';
           margin: 0 30px;
         }
+        &.active a {
+          color: $blue;
+        }
         a {
           color: $copy;
           text-decoration: none;
-          &.active {
-            color: $blue;
-          }
         }
       }
     }
@@ -437,6 +438,12 @@ section.latest-projects {
       max-width: calc(100% / 3);
       position: relative;
       max-height: 250px;
+      visibility: hidden;
+      order: 6;
+      &.active {
+        visibility: initial;
+        order: 1;
+      }
       &:hover .project-preview {
         @include flex($justify: space-between);
       }
