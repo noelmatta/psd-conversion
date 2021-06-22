@@ -120,5 +120,36 @@ toggleAccordion = (e) => {
   e.parentNode.classList.add('open');
 }
 
+// Event Listeners
+
+document.querySelectorAll('.testimonial-container .arrow').forEach(direction => {
+  direction.addEventListener('click', (e) => {
+    prevNextSlide(e.target.classList[1], '.testimonial-content');
+  })
+})
+
+document.querySelectorAll('.testimonial-thumbnail').forEach(testament => {
+  testament.addEventListener('click', (e) => {
+    setActive(e.target.parentNode);
+  })
+})
+
+document.querySelectorAll('.project-filters li').forEach(navItem => {
+  navItem.addEventListener('click', (e) => {
+    filterProject(e.target);
+  })
+})
+
+document.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
+  thumb.addEventListener('click', (e) => {
+    setActive(e.target.parentNode);
+  })
+})
+
+document.querySelectorAll('.accordion-toggle').forEach(accordion => {
+  accordion.addEventListener('click', (e) => {
+    toggleAccordion(e.target);
+  })
+})
 
 // myJS.init();

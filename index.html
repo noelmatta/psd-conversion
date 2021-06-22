@@ -110,28 +110,28 @@
         <div class="overlay"></div>
         <div class="container">
           <nav class="testimonial-menu" id="testimonial-content">
-            <div class="testimonial-thumbnail active" data-name="slide-0" onclick="setActive(this)">
+            <div class="testimonial-thumbnail active" data-name="slide-0">
               <img src="./images/team_01.png" alt="">
             </div>
-            <div class="testimonial-thumbnail" data-name="slide-1" onclick="setActive(this)">
+            <div class="testimonial-thumbnail" data-name="slide-1">
               <img src="./images/team_02.png" alt="">
             </div>
-            <div class="testimonial-thumbnail" data-name="slide-2" onclick="setActive(this)">
+            <div class="testimonial-thumbnail" data-name="slide-2">
               <img src="./images/team_03.png" alt="">
             </div>
-            <div class="testimonial-thumbnail" data-name="slide-3" onclick="setActive(this)">
+            <div class="testimonial-thumbnail" data-name="slide-3">
               <img src="./images/team_01.png" alt="">
             </div>
-            <div class="testimonial-thumbnail" data-name="slide-4" onclick="setActive(this)">
+            <div class="testimonial-thumbnail" data-name="slide-4">
               <img src="./images/team_02.png" alt="">
             </div>
-            <div class="testimonial-thumbnail" data-name="slide-5" onclick="setActive(this)">
+            <div class="testimonial-thumbnail" data-name="slide-5">
               <img src="./images/team_03.png" alt="">
             </div>
           </nav>
           <div class="testimonial-container">
             <div class="arrow prev">
-              <i class="fas fa-chevron-left" onclick="prevNextSlide('prev', '.testimonial-content')"></i>
+              <i class="fas fa-chevron-left"></i>
             </div>
             <div class="testimonial-slider">
               <div class="testimonial-content slide-0 active">
@@ -168,7 +168,7 @@
               </div>
             </div>
             <div class="arrow next">
-              <i class="fas fa-chevron-right" onclick="prevNextSlide('next', '.testimonial-content')"></i>
+              <i class="fas fa-chevron-right"></i>
             </div>
           </div>
         </div>
@@ -241,13 +241,13 @@
         <div class="container">
           <nav class="project-filters">
             <ul>
-              <li class="active"><a href="javascript:void(0)" onclick="filterProject(this)" data-name="all">All</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="logo">Logo</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="business">Business</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="photography">Photography</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="branding">Branding</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="graphic">Graphic</a></li>
-              <li><a href="javascript:void(0)" onclick="filterProject(this)" data-name="typography">Typography</a></li>
+              <li class="active"><a href="javascript:void(0)"data-name="all">All</a></li>
+              <li><a href="javascript:void(0)" data-name="logo">Logo</a></li>
+              <li><a href="javascript:void(0)" data-name="business">Business</a></li>
+              <li><a href="javascript:void(0)" data-name="photography">Photography</a></li>
+              <li><a href="javascript:void(0)" data-name="branding">Branding</a></li>
+              <li><a href="javascript:void(0)" data-name="graphic">Graphic</a></li>
+              <li><a href="javascript:void(0)" data-name="typography">Typography</a></li>
             </ul>
           </nav>
           <div class="projects">
@@ -390,22 +390,22 @@
                 <img src="./images/proj_6.png" alt="img 1" />
               </div>
               <div class="gallery-thumbs" id="img-selector">
-                <div class="gallery-thumbnail active" data-name="slide-0" onclick="setActive(this)">
+                <div class="gallery-thumbnail active" data-name="slide-0">
                   <img src="./images/proj_1.png" alt="img 1" />
                 </div>
-                <div class="gallery-thumbnail" data-name="slide-1" onclick="setActive(this)">
+                <div class="gallery-thumbnail" data-name="slide-1">
                   <img src="./images/proj_2.png" alt="img 1" />
                 </div>
-                <div class="gallery-thumbnail" data-name="slide-2" onclick="setActive(this)">
+                <div class="gallery-thumbnail" data-name="slide-2">
                   <img src="./images/proj_3.png" alt="img 1" />
                 </div>
-                <div class="gallery-thumbnail" data-name="slide-3" onclick="setActive(this)">
+                <div class="gallery-thumbnail" data-name="slide-3">
                   <img src="./images/proj_4.png" alt="img 1" />
                 </div>
-                <div class="gallery-thumbnail" data-name="slide-4" onclick="setActive(this)">
+                <div class="gallery-thumbnail" data-name="slide-4">
                   <img src="./images/proj_5.png" alt="img 1" />
                 </div>
-                <div class="gallery-thumbnail" data-name="slide-5" onclick="setActive(this)">
+                <div class="gallery-thumbnail" data-name="slide-5">
                   <img src="./images/proj_6.png" alt="img 1" />
                 </div>
               </div>
@@ -539,14 +539,14 @@
 
             <div class="accordion open">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle" onclick="toggleAccordion(this)">Services We Provide</button>
+              <button class="accordion-toggle">Services We Provide</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis miristum nulla.</p>
               </div>              
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle" onclick="toggleAccordion(this)">Huge Corporate Responsibility</button>
+              <button class="accordion-toggle">Huge Corporate Responsibility</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>
@@ -554,7 +554,7 @@
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle" onclick="toggleAccordion(this)">Free Demo Content Installations</button>
+              <button class="accordion-toggle">Free Demo Content Installations</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>

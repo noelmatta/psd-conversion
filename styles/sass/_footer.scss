@@ -1,0 +1,211 @@
+
+footer {
+  color: $copy;
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+  }
+  a {
+    text-decoration: none;
+    color: $copy;
+  }
+  .top-footer {
+    background: #313131;
+    display: block;
+    .container {
+      @include flex;
+      .logo {
+        flex: 2;
+        text-align:center;
+      }
+      nav {
+        @include flex($justify:space-around);
+        flex: 1;
+        ul {
+          @include flex;
+          padding-left:0;
+          margin: 0;
+          li {
+            text-align: center;
+            a {
+              text-decoration: none;
+              color: #6b6b6b;
+              &:hover {
+                color: $primary-color;
+                i {
+                  background: $blue;
+                }
+              }
+              i {
+                width: 45px;
+                height: 45px;
+                background: #4a4a4a;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                @include flex($justify:space-around, $width:45px);
+                margin: 0 auto;
+              }
+              .icon-title {
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .mid-footer {
+    background: #2d2d2d;
+    .container {
+      .about, .useful-links, .mailing-list {
+        display: block;
+      }
+      .archives, .latest-news, .footer-contact {
+        display: none;
+      }
+      padding: 50px 0;
+      &>* {
+        width: calc(25% - 30px);
+      }
+      a {
+        &:hover {
+          color: $primary-color;
+        }
+        &.more {
+          position: relative;
+          top: 10px;
+          &::after {
+            content: '\f101';
+            font-family: 'FontAwesome';
+            color: $blue;
+            margin-left: 5px;
+          }
+        }
+      }
+      @include flex($align: flex-start);
+      .latest-news {
+        .news-item {
+          @include flex($align:flex-start);
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+          padding: 20px 0 15px 0;  
+          &:first-of-type {
+            padding-top: 0;
+          }
+          &:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+          }      
+          .news-thumb {
+            a {
+              img {
+                width: 60px;
+                height: 60px;
+                object-fit: cover;
+              }
+            }
+          }
+          .news-snippet {
+            padding: 0 10px;
+            h5 {
+              margin: 0;
+              font-size:0.8rem;
+              line-height: 1.5;
+              a {
+                color: $primary-color;
+              }
+            }
+            .news-timestamp {
+              font-size:0.65rem;
+            }
+          }
+        }
+      }
+      .recent-work {
+        .recent-thumbs {
+          @include flex;
+          flex-wrap: wrap;
+          a {
+            width: 62px;
+            height: 62px;
+            margin-bottom: 4px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;              
+            }
+          }
+        }
+      }
+      .footer-contact {
+        .contact-row {
+          @include flex($justify: flex-start, $align: flex-start);
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+          padding: 15px 0;  
+          &:first-of-type {
+            padding-top: 0;
+          } 
+          .icon {
+            margin-right: 15px;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+          }
+          .info {
+            a {
+              display: block;
+            }
+          }
+          &.social {
+            a {
+              margin-right: 25px;
+              font-size: 1.2rem;
+              color: #4a4a4a;
+              &:hover {
+                color: $blue;
+              }
+            }
+          } 
+        }
+      }
+      .archives, .useful-links {
+        nav {
+          ul {
+            list-style-type: none;
+            li {
+              display: block;
+              border-bottom: 1px solid rgba(255,255,255,0.05);
+              padding: 10px 0;
+              &:before {
+                content: '\f101';
+                font-family: 'FontAwesome';
+                color: $blue;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .bot-footer {
+    background: #373737;
+    .container {
+      @include flex;
+      text-transform: uppercase;
+      font-weight: 700;
+      nav {
+        a {
+          color: #6b6b6b;
+          text-decoration: none;
+          font-size:0.7rem;
+          margin-right: 20px;
+          &:hover {
+            color: $blue;
+          }
+        }
+      }
+      .copyright {
+        color: #6b6b6b;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+
+// Mobile Portrait
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+
+  header {
+    display: none;
+  }
+
+  section.features, section.cta, section.creative-team, section.tech-stack, section.contact, section.contact-page {
+    .container {
+      @include flex($align: center, $orientation: column);
+    }
+  }
+
+  .home.hero {
+    @include banners($height: 100vh, $bg-image: url('/images/thought-catalog-505eectW54k-unsplash.jpeg'), $margin-top: 0);
+    .hero-text {
+      h1 {
+        font-size: 0.4rem;
+      }
+    }
+  }
+  section.benefits {
+    .container {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  section.clients {
+    .container {
+      .client-logos {
+        @include flex($orientation:column);
+      }
+    }
+  }
+  section.features {
+    .container .card {
+      width: 100%;
+    }
+  }
+  section.latest-projects {
+    .projects {
+      .project {
+        max-width: 100%;
+        max-height: 175px;
+      }
+    }
+  }
+  section.project-gallery {
+    .container {
+      @include flex($align: stretch, $orientation: column);
+      .gallery-slider {
+        width: 100%;
+        .gallery-thumbs {
+          flex-wrap: wrap;
+        }
+      }
+      .gallery-details {
+        width: 100%;
+      }
+    }
+  }
+  section.tech-stack {
+    .tech {
+      margin: 0 auto;
+    }
+  }
+  section.contact {
+    .contact-form {
+      width: 100%;
+    }
+    .contact-accordions {
+      width: 100%;
+    }
+  }
+  section.creative-team {
+    .creative-card {
+      width: 100%;
+    }
+  }
+  section.testimonials {
+    .testimonial-container {
+      display: none;
+    }
+  }
+
+  footer {
+    .mid-footer {
+      .container {
+        @include flex($align: flex-start, $orientation: column);
+        &>* {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
+
+
+
+  
+}
+
