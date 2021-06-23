@@ -503,7 +503,7 @@ section.benefits .container .benefits-grid .benefit .icon {
   border-radius: 50%;
   padding: 15px;
   margin-right: 20px;
-  min-width: 65px;
+  min-width: 67px;
   min-height: 65px;
   text-align: center;
 }
@@ -529,6 +529,9 @@ section.benefits .container .benefits-grid .benefits-img {
 section.features .container .card {
   border: 1px solid #f9f9f9;
   width: calc(25% - 20px);
+}
+section.features .container .card:not(:last-of-type) {
+  margin-bottom: initial;
 }
 section.features .container .card .icon {
   background: #f9f9f9;
@@ -970,6 +973,8 @@ section.latest-projects .projects .project a {
 section.latest-projects .projects .project a img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section.contact h3 {
@@ -1066,6 +1071,7 @@ section.contact .contact-accordions .accordion .panel {
 }
 
 section.tech-stack .tech {
+  position: relative;
   margin: 0 30px;
   width: 100%;
   display: -webkit-box;
@@ -1088,7 +1094,6 @@ section.tech-stack .tech p {
 }
 section.tech-stack .tech .filled {
   position: absolute;
-  top: 15px;
   z-index: 2;
 }
 section.tech-stack .tech .filled.android {
@@ -1840,6 +1845,11 @@ footer.home .bot-footer .container nav {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  body {
+    font-size: 16px;
+    line-height: 2;
+  }
+
   header {
     display: none;
   }
@@ -1861,6 +1871,10 @@ footer.home .bot-footer .container nav {
             align-items: center;
   }
 
+  section:not(.cta) {
+    padding: 15px 0;
+  }
+
   .home.hero {
     background-image: url("/images/thought-catalog-505eectW54k-unsplash.jpeg");
     background-size: cover;
@@ -1874,6 +1888,38 @@ footer.home .bot-footer .container nav {
 
   section.benefits .container .benefits-grid {
     grid-template-columns: 1fr;
+  }
+  section.benefits .container .benefits-grid .benefits-img {
+    text-align: center;
+  }
+  section.benefits .container .benefits-grid .benefit {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.benefits .container .benefits-grid .benefit .content {
+    text-align: center;
+    margin-top: 15px;
+  }
+  section.benefits .container .benefits-grid .benefit .icon {
+    padding: 5px;
+    min-width: 51.5px;
+    min-height: 50px;
+    margin-right: initial;
+  }
+  section.benefits .container .benefits-grid .benefit h4 {
+    margin-bottom: 5px;
   }
 
   section.clients .container .client-logos {
@@ -1896,10 +1942,50 @@ footer.home .bot-footer .container nav {
   section.features .container .card {
     width: 100%;
   }
+  section.features .container .card:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  section.features .container .card .icon i {
+    font-size: 2rem;
+  }
 
+  section.latest-projects nav.project-filters ul li a {
+    font-size: 1rem;
+  }
+  section.latest-projects nav.project-filters ul li:not(:last-of-type)::after {
+    margin: 0 10px;
+  }
   section.latest-projects .projects .project {
     max-width: 100%;
-    max-height: 175px;
+    max-height: 200px;
+  }
+  section.latest-projects .projects .project .project-preview {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.latest-projects .projects .project .project-preview h4 {
+    margin: 5px 0;
+  }
+  section.latest-projects .projects .project .project-preview h4 a .project-category {
+    font-size: 0.8rem;
+    display: block;
+  }
+  section.latest-projects .projects .project .project-preview .project-actions {
+    background: transparent;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 
   section.project-gallery .container {
@@ -1920,6 +2006,7 @@ footer.home .bot-footer .container nav {
   }
   section.project-gallery .container .gallery-slider {
     width: 100%;
+    margin-bottom: 30px;
   }
   section.project-gallery .container .gallery-slider .gallery-thumbs {
     -ms-flex-wrap: wrap;
@@ -1928,9 +2015,18 @@ footer.home .bot-footer .container nav {
   section.project-gallery .container .gallery-details {
     width: 100%;
   }
+  section.project-gallery .container .gallery-details .gallery-features .gallery-feature {
+    width: 100%;
+  }
+  section.project-gallery .container .gallery-details .gallery-features .gallery-feature h4 {
+    margin: 0 0 10px 0;
+  }
 
   section.tech-stack .tech {
     margin: 0 auto;
+  }
+  section.tech-stack .tech:not(:last-of-type) {
+    margin-bottom: 30px;
   }
 
   section.contact .contact-form {
@@ -1942,6 +2038,12 @@ footer.home .bot-footer .container nav {
 
   section.creative-team .creative-card {
     width: 100%;
+  }
+  section.creative-team .creative-card ul {
+    padding: 5px;
+  }
+  section.creative-team .creative-card ul i {
+    font-size: 1.2rem;
   }
 
   section.testimonials .testimonial-container {
@@ -1963,8 +2065,28 @@ footer.home .bot-footer .container nav {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    padding: 15px 0;
   }
   footer .mid-footer .container > * {
     width: 100%;
+    padding: 15px;
+  }
+  footer .mid-footer .container > * h4 {
+    margin-top: 0;
+  }
+  footer .mid-footer .container .latest-news .news-item .news-snippet h5 {
+    font-size: 0.95rem;
+  }
+  footer .mid-footer .container .latest-news .news-item .news-snippet .news-timestamp {
+    font-size: 0.8rem;
+  }
+  footer .mid-footer .container .latest-news .news-item .news-thumb a img {
+    width: 100px;
+    height: 100px;
+  }
+
+  :not(.accordion) > button {
+    width: 100%;
+    margin-top: 15px;
   }
 }

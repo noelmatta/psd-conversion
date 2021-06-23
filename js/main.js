@@ -128,8 +128,8 @@ document.querySelectorAll('.testimonial-container .arrow').forEach(direction => 
   })
 })
 
-document.querySelectorAll('.testimonial-thumbnail').forEach(testament => {
-  testament.addEventListener('click', (e) => {
+document.querySelectorAll('.testimonial-thumbnail, .gallery-thumbnail').forEach(thumb => {
+  thumb.addEventListener('click', (e) => {
     setActive(e.target.parentNode);
   })
 })
@@ -137,12 +137,6 @@ document.querySelectorAll('.testimonial-thumbnail').forEach(testament => {
 document.querySelectorAll('.project-filters li').forEach(navItem => {
   navItem.addEventListener('click', (e) => {
     filterProject(e.target);
-  })
-})
-
-document.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
-  thumb.addEventListener('click', (e) => {
-    setActive(e.target.parentNode);
   })
 })
 

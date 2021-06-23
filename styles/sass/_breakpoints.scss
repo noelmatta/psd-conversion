@@ -6,6 +6,10 @@
   and (-webkit-min-device-pixel-ratio: 2) 
   and (orientation: portrait) {
 
+  body {
+    font-size: 16px;
+    line-height: 2;
+  }
   header {
     display: none;
   }
@@ -15,7 +19,9 @@
       @include flex($align: center, $orientation: column);
     }
   }
-
+  section:not(.cta) {
+    padding: 15px 0;
+  }
   .home.hero {
     @include banners($height: 100vh, $bg-image: url('/images/thought-catalog-505eectW54k-unsplash.jpeg'), $margin-top: 0);
     .hero-text {
@@ -28,6 +34,25 @@
     .container {
       .benefits-grid {
         grid-template-columns: 1fr;
+        .benefits-img {
+          text-align: center;
+        }
+        .benefit {
+          @include flex($orientation:column, $align: center);
+          .content {
+            text-align: center;
+            margin-top: 15px;
+          }
+          .icon {
+            padding: 5px;
+            min-width: 51.5px;
+            min-height: 50px;
+            margin-right: initial;
+          }
+          h4 {
+            margin-bottom: 5px;
+          }
+        }
       }
     }
   }
@@ -41,13 +66,50 @@
   section.features {
     .container .card {
       width: 100%;
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+      .icon {
+        i {
+          font-size: 2rem;
+        }
+      }
     }
   }
   section.latest-projects {
+    nav.project-filters {
+      ul {
+        li {
+          a {
+            font-size: 1rem;
+          }
+          &:not(:last-of-type)::after {
+            margin: 0 10px;
+          }
+        }
+      }
+    }
     .projects {
       .project {
         max-width: 100%;
-        max-height: 175px;
+        max-height: 200px;
+        .project-preview {
+          @include flex($justify: space-between);
+          h4 {
+            margin: 5px 0;
+            a {
+              
+              .project-category {
+                font-size: 0.8rem;
+                display: block;
+              }
+            }
+          }
+          .project-actions {
+            background: transparent;
+            transform: translateY(0);
+          }
+        }
       }
     }
   }
@@ -56,18 +118,31 @@
       @include flex($align: stretch, $orientation: column);
       .gallery-slider {
         width: 100%;
+        margin-bottom: 30px;
         .gallery-thumbs {
           flex-wrap: wrap;
         }
       }
       .gallery-details {
         width: 100%;
+        .gallery-features {
+          .gallery-feature {
+            width: 100%;
+            
+            h4 {
+              margin: 0 0 10px 0;
+            }
+          }
+        }
       }
     }
   }
   section.tech-stack {
     .tech {
       margin: 0 auto;
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
     }
   }
   section.contact {
@@ -81,6 +156,12 @@
   section.creative-team {
     .creative-card {
       width: 100%;
+      ul {
+        padding: 5px;
+        i {
+          font-size: 1.2rem;
+        }
+      }
     }
   }
   section.testimonials {
@@ -93,15 +174,43 @@
     .mid-footer {
       .container {
         @include flex($align: flex-start, $orientation: column);
+        padding: 15px 0;
         &>* {
           width: 100%;
+          padding: 15px;
+          h4 {
+            margin-top: 0;
+          }
+        }
+        .latest-news {
+          .news-item {
+            .news-snippet {
+              h5 {
+                font-size: 0.95rem;
+              }
+              .news-timestamp {
+                font-size: 0.8rem;
+              }
+            }
+            .news-thumb {
+              a {
+                img {
+                  width: 100px;
+                  height: 100px;
+                }
+              }
+            }
+          }
         }
       }
     }
   }
 
 
-
+  :not(.accordion) > button {
+    width: 100%;
+    margin-top: 15px;
+  }
 
 
   
