@@ -65,11 +65,13 @@ filterProject = (e) => {
 
 
 
-prevNextSlide = (selection, slideType) => {
+prevNextSlide = (selection, slideType, thumbType, circleType = 'none') => {
 
   const slides = Array.from(document.querySelectorAll(slideType));
+  const thumbs = Array.from(document.querySelectorAll(thumbType))
 
   const activeSlide = document.querySelector(`${slideType}.active`);
+  
   let activeIndex = slides.indexOf(activeSlide);
 
   (selection === 'prev') ?
@@ -82,6 +84,21 @@ prevNextSlide = (selection, slideType) => {
     slide.classList.remove('active');
   });
 
+  thumbs.forEach((thumb) => {
+    thumb.classList.remove('active')
+  })
+
+  if (slideType == '.img-selector') { 
+    const circles = Array.from(document.querySelectorAll(circleType))
+
+    circles.forEach((circle) => {
+      circle.classList.remove('active')
+    })
+
+    circles[activeIndex].classList.add('active');
+  }
+
+  thumbs[activeIndex].classList.add('active');
   slides[activeIndex].classList.add('active');
 }
 
@@ -105,26 +122,53 @@ setActive = (selected) => {
   });
 
   document.querySelector(sliderID+sliderType).classList.add('active');
-  
+  console.log(selected.dataset.name)
+  if (selected.classList.contains('gallery-thumbnail')) {
+    const circles = Array.from(document.querySelectorAll('.gallery-circle'));
+    circles.forEach((circle) => {
+      circle.classList.remove('active');
+    })
+    document.querySelector(`.gallery-circle[data-name=${selected.dataset.name}]`).classList.add('active')
+  }
+
 }
 
 toggleAccordion = (e) => {
-  const currentAccordion = '.' + e.parentNode.classList[0];
-  const accordions = Array.from(document.querySelectorAll(currentAccordion));
+  const currentAccordion = e.parentNode.classList;
+  const accordions = Array.from(document.querySelectorAll(".accordion"));
+  
+  const closeAccordians = () => {
+    accordions.forEach((accordion) => {
+      accordion.classList.remove('open');
+      accordion.classList.add('closed');
+    })
+  }   
 
-  accordions.forEach((accordion) => {
-    accordion.classList.remove('open');
-    accordion.classList.add('closed');
-  })
-  e.parentNode.classList.remove('closed');
-  e.parentNode.classList.add('open');
+  if (currentAccordion.contains("closed")) {
+    closeAccordians()    
+    currentAccordion.remove("closed");
+    currentAccordion.add("open");
+  } else {
+    closeAccordians()
+  }
 }
 
 // Event Listeners
 
+document.querySelector("#hamburger i").addEventListener('click', () => {
+  document.querySelector("header").classList.toggle("open")
+  if (document.querySelector("header").classList.contains("open")) {
+    document.querySelector("#hamburger i").classList.remove("fa-bars")
+    document.querySelector("#hamburger i").classList.add("fa-times")
+  } else {
+    document.querySelector("#hamburger i").classList.add("fa-bars")
+    document.querySelector("#hamburger i").classList.remove("fa-times")    
+  }
+})
+
 document.querySelectorAll('.testimonial-container .arrow').forEach(direction => {
   direction.addEventListener('click', (e) => {
-    prevNextSlide(e.target.classList[1], '.testimonial-content');
+    prevNextSlide(e.target.parentNode.classList[1], '.testimonial-content', '.testimonial-thumbnail');
   })
 })
 
@@ -146,4 +190,26 @@ document.querySelectorAll('.accordion-toggle').forEach(accordion => {
   })
 })
 
-// myJS.init();
+document.querySelectorAll('a[href=""], button[type="submit"]').forEach(linkItem => {
+  linkItem.addEventListener('click', (e) => {
+    e.preventDefault();
+    alert("This is a demo site with non-functional links.")
+  })
+})
+
+setInterval(() => {
+  prevNextSlide('next', '.testimonial-content', '.testimonial-thumbnail');
+  prevNextSlide('next', '.img-selector', '.gallery-thumbnail', '.gallery-circle');
+  prevNextSlide('next', '.client-content', '.client-thumbnail');
+}, 5000)
+
+const header = document.getElementById('siteHeader')
+const sticky = header.offsetTop;
+
+window.onscroll = () => {
+  if (window.scrollY > sticky) {
+    header.classList.add('sticky')
+  } else {
+    header.classList.remove('sticky')   
+  }
+}

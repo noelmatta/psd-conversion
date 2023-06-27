@@ -39,6 +39,15 @@ $pink: #eb768c;
   opacity: 0.9;
 }
 
+@mixin slider-circles($background: $copy, $opacity: 0.2) {
+  cursor: default;
+  background: $background;
+  opacity: $opacity;
+  height: 10px;
+  width: 10px;
+  border-radius: 15px;  
+}
+
 // Extends
 %pie {
   @include flex($orientation:column, $justify:center, $width: initial);  
@@ -148,9 +157,14 @@ nav ul {
 
 .overlay {
   @include overlay;
-  &+.container button {
+  &+.container a.button {
     background: $secondary-color;
     color: $black;
+    &:hover {
+      background: $blue;
+      color: $primary-color;
+      border: 1px solid $secondary-color;
+    }
   }
 }
 
@@ -180,7 +194,7 @@ section.cta {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 30px;
   position: relative;
 }
 
@@ -193,7 +207,7 @@ section > h2 {
 
 .full-width {
   width: 100%;
-  padding: 0 15px;
+  padding: 0 30px;
 }
 
 .wrapper {
@@ -302,6 +316,22 @@ section.project-gallery {
             object-fit: cover;
           }
         }
+        .gallery-timer {
+          @include flex($justify:center, $width: calc(50% - 30px));
+          margin: 0 auto;
+          font-size: 1.2rem;
+          position: absolute;
+          margin-top: -30px;
+          .gallery-circle {
+            @include slider-circles($background: none, $opacity: 1);
+            outline: 1px solid $secondary-color;
+            margin: 0 10px;
+            &.active {
+              background: $secondary-color;
+              opacity: 1;
+            }
+          }
+        }        
         .gallery-thumbs {
           @include flex($justify: space-evenly);
           background: rgba(255,255,255,0.1);
@@ -327,6 +357,9 @@ section.project-gallery {
       @include flex($orientation:column, $width: calc(50% - 15px), $align: flex-start);
       h3 {
         margin:0;
+      }
+      a.button {
+        font-weight: 400;
       }
       .gallery-features {
         @include flex;
@@ -513,11 +546,11 @@ section.contact {
       label {
         position: relative;
         display: block;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         input, textarea {
           border: 1px solid #f1f1f1;
           width: 100%;
-          padding: 20px;
+          padding: 16px 20px;
           &+i {
             position: absolute;
             margin-left: -30px;
@@ -525,11 +558,13 @@ section.contact {
           }
         }
         textarea {
-          min-height:100px;
+          min-height:150px;
         }
       }
       button {
         width: 100%;
+        font-weight: 400;
+        padding: 15px 0;
       }
     }
   }
@@ -555,7 +590,7 @@ section.contact {
       }
       img {
         width: 100%;
-        height: 150px;
+        height: 180px;
         object-fit: cover;
         object-position: top;
       }
@@ -768,6 +803,21 @@ section.clients {
         }
       }
     }
+    .client-slider {
+      @include flex($justify:space-around, $width: 50%);
+      max-width: 10%;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      position: relative;
+      top: 30px;
+      .client-thumbnail {
+        @include slider-circles;
+        &.active {
+          background: $blue;
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 
@@ -810,14 +860,21 @@ section.contact-page {
 
 
 
-:not(.accordion) > button {
-  padding: 20px 30px;
-  border: 0;
+:not(.accordion) > a.button, button[type="submit"] {
+  padding: 10px 30px;
+  border: 1px solid $blue;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.8rem;
   background: $blue;
   color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    background-color: $secondary-color;
+    color: $black;
+    border: 1px solid $black;
+    box-sizing: border-box;
+  }
 }

@@ -62,7 +62,7 @@ footer {
       .archives, .latest-news, .footer-contact {
         display: none;
       }
-      padding: 50px 0;
+      padding: 50px 30px;
       &>* {
         width: calc(25% - 30px);
       }
@@ -154,8 +154,11 @@ footer {
             }
           }
           &.social {
+            
             a {
-              margin-right: 25px;
+              &:not(:last-of-type) {
+                margin-right: 20px;
+              }
               font-size: 1.2rem;
               color: #4a4a4a;
               &:hover {
@@ -176,8 +179,15 @@ footer {
               &:before {
                 content: '\f101';
                 font-family: 'FontAwesome';
-                color: $blue;
                 margin-right: 10px;
+              }
+              &:hover {
+                a {
+                  color: $primary-color;
+                }
+                &:before {
+                  color: $blue;
+                }
               }
             }
           }

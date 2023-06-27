@@ -10,6 +10,9 @@ header {
   position: relative;
   z-index: 1; 
   font-size: 0.8rem;
+  .hamburger {
+    display: none;
+  }
   .container {
     display: flex;
     height: 100%;
@@ -73,5 +76,13 @@ header {
         background: $header-nav-item-color;
       }
     }
+  }
+  &.sticky {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(225deg, rgb(56, 197, 243) 0%, rgb(96, 150, 34) 100%);
+    z-index: 5;
+    padding: 0 30px;
+    box-shadow: 0 0 10px 0 $black;
   }
 }

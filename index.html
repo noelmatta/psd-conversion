@@ -28,21 +28,24 @@
 <body>
 
   <div class="wrapper">
-    <header class="full-width">
+    <header class="full-width" id="siteHeader">
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
       <div class="container">
         <div class="logo">
-          <a href="">
+          <a href="#top">
             <img src="./images/logo.png" alt="Company logo" title="Click to return home" />
           </a>
         </div>
         <nav>
           <div class="links">
             <ul>
-              <li><a href="./index.html">Main</a></li>
-              <li><a href="./index.html">Demos</a></li>
-              <li><a href="./index.html">Portfolio</a></li>
-              <li><a href="./index.html">Blog</a></li>
-              <li><a href="./index.html">Shortcodes</a></li>
+              <li><a href="#top">Main</a></li>
+              <li><a href="">Demos</a></li>
+              <li><a href="">Portfolio</a></li>
+              <li><a href="">Blog</a></li>
+              <li><a href="">Shortcodes</a></li>
             </ul>
           </div>
         </nav>
@@ -53,7 +56,7 @@
       </div>
     </header>
 
-    <section class="home hero">
+    <section class="home hero" id="top">
       <div class="overlay"></div>
       <div class="hero-text">
         <h1>Welcome to Huge</h1>
@@ -103,7 +106,7 @@
       <section class="cta shaded">
         <div class="container">
           <p>HUGE is hand crafted - pixel perfect and responsive wordpress theme</p>
-          <button>Purchase Now</button>
+          <a href="" class="button">Purchase Now</a>
         </div>
       </section>
       <section class="testimonials">
@@ -258,8 +261,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -270,8 +273,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -282,8 +285,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -294,8 +297,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -306,8 +309,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -318,8 +321,8 @@
               <div class="project-preview">
                 <h4><a href="">Fullwidth Slideshow<span class="project-category"> - Fashion</span></a></h4>
                 <div class="project-actions">
-                  <a href="#"><i class="fas fa-link"></i></a>
-                  <a href="#"><i class="fas fa-search"></i></a>
+                  <a href=""><i class="fas fa-link"></i></a>
+                  <a href=""><i class="fas fa-search"></i></a>
                 </div>
               </div>
             </div>
@@ -389,6 +392,14 @@
               <div class="img-selector slide-5">
                 <img src="./images/proj_6.png" alt="img 1" />
               </div>
+              <div class="gallery-timer">
+                <span class="gallery-circle active" data-name="slide-0"></span>
+                <span class="gallery-circle" data-name="slide-1"></span>
+                <span class="gallery-circle" data-name="slide-2"></span>
+                <span class="gallery-circle" data-name="slide-3"></span>
+                <span class="gallery-circle" data-name="slide-4"></span>
+                <span class="gallery-circle" data-name="slide-5"></span>
+              </div>
               <div class="gallery-thumbs" id="img-selector">
                 <div class="gallery-thumbnail active" data-name="slide-0">
                   <img src="./images/proj_1.png" alt="img 1" />
@@ -437,7 +448,7 @@
                 <p>lass aptent taciti sociosqu litora equent conubia nos per inceptos himenaeos.</p>
               </div>
             </div>
-            <button>Purchase</button>
+            <a href="" class="button">Purchase</a>
           </div>
         </div>
       </section>
@@ -531,7 +542,7 @@
                   required></textarea>
                 <i class="fas fa-comments"></i>
               </label>
-              <button>Send Message</button>
+              <button type="submit">Send Message</button>
             </form>
           </div>
           <div class="contact-accordions">
@@ -539,14 +550,14 @@
 
             <div class="accordion open">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Services We Provide</button>
+              <button type="button" class="accordion-toggle">Services We Provide</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis miristum nulla.</p>
               </div>              
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Huge Corporate Responsibility</button>
+              <button type="button" class="accordion-toggle">Huge Corporate Responsibility</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>
@@ -554,7 +565,7 @@
             </div>
             <div class="accordion closed">
               <img src="./images/about.png" alt="" class="panel-photo">
-              <button class="accordion-toggle">Free Demo Content Installations</button>
+              <button type="button" class="accordion-toggle">Free Demo Content Installations</button>
               <div class="panel">
                 <p>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs cond mentu leo massa mollis estiegittis
                   miristum nulla.</p>
@@ -567,15 +578,20 @@
       <section class="clients shaded">
         <div class="container">
           <div class="client-logos">
-            <img src="./images/logo_bronx.png" alt="" />
-            <img src="./images/logo_sparonio.png" alt="" />
-            <img src="./images/logo_cupcakery.png" alt="" class="active" />
-            <img src="./images/logo_vintage.png" alt="" />
-            <img src="./images/logo_brandgrillhouse.png" alt="" />
-            <img src="./images/logo_newexperiences.png" alt="" />
+            <img src="./images/logo_bronx.png" alt="Bronx" class="client-content slide-0"/>
+            <img src="./images/logo_sparonio.png" alt="Sparonio" class="client-content slide-1"/>
+            <img src="./images/logo_cupcakery.png" alt="Cupcakery" class="client-content slide-2 active" />
+            <img src="./images/logo_vintage.png" alt="Vintage" class="client-content slide-3"/>
+            <img src="./images/logo_brandgrillhouse.png" alt="Brand Grill House" class="client-content slide-4"/>
+            <img src="./images/logo_newexperiences.png" alt="New Experiences" class="client-content slide-5"/>
           </div>
           <div class="client-slider">
-            dot dot dot
+            <span class="client-thumbnail" data-name="slide-0"></span>
+            <span class="client-thumbnail" data-name="slide-1"></span>
+            <span class="client-thumbnail active" data-name="slide-2"></span>
+            <span class="client-thumbnail" data-name="slide-3"></span>
+            <span class="client-thumbnail" data-name="slide-4"></span>
+            <span class="client-thumbnail" data-name="slide-5"></span>
           </div>
         </div>
       </section>
@@ -772,17 +788,7 @@
             <a href="" class="more">View more</a>
           </div>
           <div class="mailing-list">
-            <div class="contact-row">
-              <h4>Mailing List</h4>
-              <p>Sign up for our mailing list to get latest updates and offers.</p>
-              <form action="">
-                <label for="">
-                  <input type="text" placeholder="Email address">
-                  <button>+</button>
-                </label>
-              </form>
-              <p>We respect your privacy</p>
-            </div>
+
             <div class="contact-row social">
               <a href=""><i class="fab fa-twitter"></i></a>
               <a href=""><i class="fab fa-linkedin"></i></a>
